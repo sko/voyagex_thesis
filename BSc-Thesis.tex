@@ -1,0 +1,398 @@
+% Autor: Stephan Köller
+
+% Standard-Dokument mit
+%   Papierformat A4
+%   Binderand 5 mm
+%   Schrift 11-Punkt für Ausgabe, 12-Punkt für Korrektur
+%   Linie unter der Kopfzeile
+%   Nummern ohne Punkt rechts
+%		Links Kapitelname
+%   Zusammenfassung mit I
+%		Inhaltsverzeichnis II
+%		Abbildungs- und Tabellenverzeichnis mit III
+
+\documentclass[
+	a4paper,
+	% Korrekturversion 12pt
+	%12pt,
+	11pt,
+	headsepline,
+	numbers=noenddot,
+	index=totoc,
+	fleqn,
+	% Absatzabstand statt Einrückung
+	% dafür dann \setlength im Inhalt auskommentieren
+	%parskip=half,
+	headings=normal
+]{scrartcl}
+
+% Zeilenabstand für korrektur größer
+%\usepackage[onehalfspacing]{setspace}
+
+% Sinnvoll für Debugging von zu vollen Boxen
+%\usepackage{showframe}
+\usepackage{lmodern}
+
+% Tabellenumgebung
+\usepackage{ragged2e, tabulary, tablefootnote}
+
+% Nummerierung auch mit Buchstaben
+\usepackage{paralist}
+
+% Fonts etc:
+% 8-Bit-Fonts
+\usepackage[T1]{fontenc}
+\usepackage{scrhack}
+\usepackage {fancyhdr}
+\usepackage{palatino}
+
+% Fußnoten bündig
+\usepackage[bottom=1.5cm,top=2.5cm,includeheadfoot]{geometry}
+\usepackage[hang]{footmisc}
+
+% Quelltext-Listings
+\usepackage{listings}
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{ocherCode}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
+\definecolor{blueCode}{rgb}{0, 0, 0.93} % #0000EE -> rgb(0, 0, 238)
+\definecolor{greenCode}{rgb}{0, 0.6, 0} % #009900 -> rgb(0, 153, 0) 
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  	keywordstyle=\color{blue}\bfseries,
+  	ndkeywords={class, export, boolean, throw, implements, import, this},
+  	ndkeywordstyle=\color{darkgray}\bfseries,
+  	identifierstyle=\color{black},
+  	sensitive=false,
+  	comment=[l]{//},
+  	morecomment=[s]{/*}{*/},
+  	commentstyle=\color{purple}\ttfamily,
+  	stringstyle=\color{red}\ttfamily,
+  	morestring=[b]',
+  	morestring=[b]"
+}
+\lstset{
+   	language=JavaScript,
+  	backgroundcolor=\color{lightgray},
+   	extendedchars=true,
+   	basicstyle=\footnotesize\ttfamily,
+   	showstringspaces=false,
+   	showspaces=false,
+   	numbers=left,
+   	numberstyle=\footnotesize,
+   	numbersep=9pt,
+   	tabsize=2,
+   	breaklines=true,
+   	showtabs=false,
+   	captionpos=b
+}
+\lstdefinelanguage{CoffeeScript} {
+	morekeywords={
+		break,const,continue,delete,do,while,export,for,in,function,
+		if,else,import,in,instanceOf,label,let,new,return,switch,this,
+		throw,try,catch,typeof,var,void,with,yield,unless
+	},
+	sensitive=false,
+	morecomment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	morestring=[b]",
+	morestring=[d]'
+}
+\lstset{
+   	language=CoffeeScript,
+	basicstyle=\sffamily\footnotesize, 
+	keywordstyle=\sffamily\footnotesize\bfseries, 
+	commentstyle=\sffamily\footnotesize\slshape, 
+	stringstyle=\sffamily\footnotesize, 
+	showstringspaces=false, 
+	numbers=left, 
+	numberstyle=\sffamily\footnotesize, 
+	stepnumber=1, 
+	numbersep=9pt, 
+	showspaces=false, 
+	showtabs=false, 
+	frame=lines, 
+	morecomment=[l]{\%}, 
+	float=htbp, 
+	numberbychapter=true,
+	tabsize=5
+	%language=none % Hier Sprache festlegen wenn gewünscht
+}
+\lstdefinelanguage{HTML5}{
+    sensitive=true,
+    keywords={%
+    % JavaScript
+    typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break,
+    % HTML
+    html, title, meta, style, head, body, script, canvas,
+    % CSS
+    border:, transform:, -moz-transform:, transition-duration:, transition-property:,
+    transition-timing-function:
+    },
+    % http://texblog.org/tag/otherkeywords/
+    otherkeywords={<, >, \/},   
+    ndkeywords={class, export, boolean, throw, implements, import, this},   
+    comment=[l]{//},
+    % morecomment=[s][keywordstyle]{<}{>},  
+    morecomment=[s]{/*}{*/},
+    morecomment=[s]{<!}{>},
+    morestring=[b]',
+    morestring=[b]",    
+    alsoletter={-},
+    alsodigit={:}
+}
+\lstset{%
+    language=HTML5,
+    % Basic design
+    backgroundcolor=\color{lightgray},
+    basicstyle={\small\ttfamily},   
+    frame=l,
+    % Line numbers
+    xleftmargin={0.75cm},
+    numbers=left,
+    stepnumber=1,
+    firstnumber=1,
+    numberfirstline=true,
+    % Code design
+    identifierstyle=\color{black},
+    keywordstyle=\color{blue}\bfseries,
+    ndkeywordstyle=\color{greenCode}\bfseries,
+    stringstyle=\color{ocherCode}\ttfamily,
+    commentstyle=\color{darkgray}\ttfamily,
+    % Code
+    tabsize=2,
+    showtabs=false,
+   	numbersep=9pt,
+    showspaces=false,
+    showstringspaces=false,
+    extendedchars=true,
+    breaklines=true
+}
+
+% Einstellung für Literaturverzeichnis
+% um underfull boxes zu umgehen
+\usepackage{etoolbox}
+\apptocmd{\thebibliography}{\raggedright}{}{}
+
+% Schriftart
+\usepackage{helvet}
+\usepackage{enumerate}
+\usepackage{enumitem}
+
+%   zusätzliche Symbole
+\usepackage{textcomp,latexsym}
+
+%   UTF8 in der Eingabe
+\usepackage[utf8]{inputenc}
+
+% neu deutsche Rechtschreibung
+\usepackage[ngerman]{babel}
+\usepackage[babel]{microtype}
+
+% für die aktuelle Zeit
+\usepackage{scrtime}
+
+%für Definitionen, Theoreme u.Ä.
+\usepackage{theorem}
+\theoremstyle{break}
+\newtheorem{Def}{Definition}
+
+% Web-Adressen auch mit T1-Encoding
+% PDF Generierung einschalten!
+% Für DVI ausschalten
+\usepackage[hyphens]{url}
+%\usepackage[T1]{url}
+% und in tt-Font
+%PDF
+%\usepackage{hyperref}
+%\hypersetup{
+	%colorlinks=true,
+	%citecolor=blue,
+	%pdftitle={Thesis},
+	%pdfsubject={Titel},
+	%pdfauthor={Name/Matrikelnummer},
+	%linkcolor=blue,	
+	%urlcolor=blue
+%}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,citecolor=blue}
+\urlstyle{tt}
+
+% konfigurierbarer Zeilenabstand
+\usepackage{setspace}
+
+% allows for temporary adjustment of side margins
+\usepackage{chngpage}
+
+% Grafik
+\usepackage{graphicx}
+
+% Mathematik: wer's braucht, sollte folgende Zeilen verwenden:
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+% Algorithm/Algorithmic-Umgebung für Algorithmen
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% fette Seitenzahlen im index für die Hauptreferenz ermöglichen
+% Verwendung: \index{Stichwort|ibf}
+\newcommand{\ibf}[1]{{\bfseries #1}}
+
+% Abstand zweier Listenelemente kleiner
+\setlength{\itemsep}{0ex plus0.2ex}
+
+% Benutze bei der Numerierung von Gleichungen "Kapitelnummer.Gleichungsnummer"
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\sffamily\LARGE\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\sffamily\Large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\sffamily\large\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}{\normalfont\large\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+%\titleformat{\paragraph}{\normalfont\sffamily\bfseries}{\theparagraph}{5pt}{}
+\titlespacing*{\section}{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{5.5ex plus 1ex minus .2ex}{3.8ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{5.5ex plus 1ex minus .2ex}{3.3ex plus .2ex}
+\titlespacing*{\paragraph}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\subparagraph}{0pt}{2.0ex plus 0.5ex minus .2ex}{0.5ex plus .2ex}
+
+% numbers for paragraphs in Inhaltsverzeichnis
+%\setcounter{tocdepth}{5}
+% numbers for paragraphs in Content
+\setcounter{secnumdepth}{4}
+
+% Datum, falls benutzt
+\date{Ort\\ \today \\ \vspace{0.2cm}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Titelseite, keine Nummerierung
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\include{titelseite}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Leere Seite 2, keine Nummerierung
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}~
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Zusammenfassung Seite I
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{zusammenfassung}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Inhaltsverzeichnis Seite II
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\rhead{\thepage}
+\lhead{Inhaltsverzeichnis}
+\cfoot{}
+\pagenumbering{Roman}
+\setcounter{page}{2}
+\tableofcontents
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Tabellen- und Abbildungsverzeichnis Seite III
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{fancy}
+\rhead{\thepage}
+\lhead{Tabellen- und Abbildungsverzeichnis}
+\cfoot{}
+\renewcommand*\cleardoublepage{}
+\listoffigures
+\renewcommand*\cleardoublepage{}
+\listoftables
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Inhalt Seite 10, Nummerierung ab 1
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\leftmark} % 1. sectionname
+\setcounter{page}{1}
+\cfoot{}
+\pagenumbering{arabic}
+% Absatzeinzug statt Absatzabstand
+% dafür dann parskip=half in der globalen Einstellung auskommentieren
+\setlength{\parindent}{1.5em}
+\include{inhalt}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Anhang Seite 1 (Alph)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\rhead{\thepage}
+\lhead{Anhang}
+\cfoot{}
+\pagenumbering{Alph}
+\setcounter{page}{1}
+\include{anhang}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Fußnoten Seite 1 (Alph)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\pagestyle{fancy}
+%\rhead{\thepage}
+%\lhead{Fußnoten}
+%\cfoot{}
+%\pagenumbering{Alph}
+%\setcounter{page}{1}
+%\include{footnotes}
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nocite{*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Literaturverzeichnis Seite 3 (roman)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{fancy}
+\rhead{\thepage}
+\lhead{Literaturverzeichnis}
+\cfoot{}
+\pagenumbering{Roman}
+\setcounter{page}{5}
+\bibliographystyle{alphadin}
+\bibliography{references}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
