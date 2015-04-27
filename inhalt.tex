@@ -49,8 +49,8 @@ Im Rahmen dieser Arbeit soll ein Prototyp einer Web-Awendung für kollaboratives
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Aufbau der Arbeit / Gliederung}
 
-\textbf{TODO}Die Gliederung wird erst wieder bei festftehender Struktur überarbeitet.\\ \\
-
+\textbf{TODO} Die folgende Gliederung wird bei feststehender Struktur überarbeitet.\\
+\noindent
 \subparagraph{Kapitel 2}
 In diesem Kapitel werden Anwendungsfälle und Szenarien, sowie grundlegende Begriffe aus dem Bereich der Geo-Informations-Systeme und den darin verwendeten Datenmodellen und Werkzeugen beschrieben. Außerdem werden Prinzipien und Muster für Anwendungs-Systeme aus diesem Bereich vorgestellt. 
 
@@ -77,6 +77,9 @@ Im letzten Kapitel wird der Nutzen der Anwendung noch einmal im Kontext der Anwe
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Problemstellung}
+
+\textbf{TODO} Die folgende Gliederung wird bei feststehender Struktur überarbeitet.\\
+\noindent
 Im folgenden ersten Kapitel wird zunächst in Abschnitt \ref{2_SZEN} das Problem zur Entwicklung einer Geo-Tagging-Anwendung in Form einer Beschreibung von allgemeinen und konkreten Szenarien gestellt. Anschließend wird in Abschnitt \ref{2_VOYAGEX} die in dieser Bachelor-Arbeit entwickelte Anwendung \textbf{VoyageX} vorgestellt und ihre Funktionen beschrieben.
 %widmet sich den Grundlagen des Anwendungs-Bereichs von Geo-Informations-Systemen (GIS). Gleichwohl
 %scheint eine einführende Beschreibung in Abschnitt \ref{2_VOYAGEX} der im Rahmen dieser Arbeit entwickelten %Anwendung sinnvoll, um von Beginn an einen praktischen Rahmen für die folgenden Abschnitte herzustellen.
@@ -263,26 +266,23 @@ Für eine Netzwerk-Verbindungs-unabhängige Karten-Darstellung werden folgende P
 		\item wie diese Bild-Dateien lokal gespeichert werden% sollen
 		\item wie diese Bild-Dateien dann vom Karten-Viewer eingebunden werden% können
 	\end{itemize}
-Eine 
+Eine manuelle Auswahl zu speichernder Kartenbereichs-Bild-Dateien kann indirekt über die im nachfolgenden Abschnitt beschriebene Bookmark-Funktion durchgeführt werden.
+
 \paragraph{POI-Einträge}
 Alle POI-Einträge werden im Backend$^{\textbf{\ref{CMTBEREF1}}}$%
 % footnote
 \addtocounter{footnote}{1}%
-\footnotetext{\label{CMTBEREF1}Das Backend wird in Abschnitt \ref{5_BE} ausführlich beschreiben.} gespeichert - lokal können aber wegen der begrenzten Speicher-Kapazität nur bestimmte Einträge gespeichert werden. PoI-Einträge beziehen sich immer auf bestimmte Karten-Positionen, also gilt bei der Entscheidung über die Auswahl der lokal zu speichernden Einträgen das gleiche wie für Karten-Kacheln.\\
-Allerdings wird bei Einträgen ein zusätzliches Relevanz-Kriterium eingeführt: vom Benutzer explizit markierte Einträge (Bookmarks) sind jederzeit verfügbar, d.h. daß nicht nur die Bookmark-Information sondern auch der referenzierte Kartenbereich lokal persistent gehalten wird. \\
+\footnotetext{\label{CMTBEREF1}Das Backend wird in Abschnitt \ref{5_BE} ausführlich beschreiben.} gespeichert - lokal können aber je nach Speicher-Kapazität nur eine begrenzte Anzahl von Einträgen gespeichert werden.\\ PoI-Einträge beziehen sich immer auf bestimmte Karten-Positionen, also gilt bei der Entscheidung über die Auswahl der lokal zu speichernden Einträgen das gleiche wie für Karten-Kacheln.
+Allerdings wird bei Einträgen ein zusätzliches Relevanz-Kriterium eingeführt: vom Benutzer explizit markierte Einträge (Bookmarks) sind jederzeit verfügbar, d.h. daß nicht nur die Bookmark-Information sondern auch der referenzierte Kartenbereich lokal persistent gehalten wird.\\
 %werden immer dann mit den system-daten synschronisiert wenn der benutzer online ist.\\
-Bookmarks nur lokal gespeichert.
-
-
-
-
+Bookmarks werden nur lokal gespeichert.
 
 \paragraph{Nachrichten}
-Anders als bei POI-Einträgen ist für Chat-Nachrichten kein Karten-Kontext erforderlich. Daher können
-diese mit einem einfachen Cache-Algorithmus, beispielsweise einer FIFO-History-Queue, verwaltet werden.
+Anders als PoI-Einträgen existiert für Chat-Nachrichten kein Karten-Kontext, und folglich besteht auch keine Notwendigkeit Karten-Kachel-Bilder dafür zu laden. Aus diesem Grund werden
+Chat-Nachrichten mit einem einfachen Cache-Algorithmus, nämlich einer FIFO-History-Queue, verwaltet.
 
 \paragraph{Peer-Daten}
-Peer-Daten sind Teil der Information von POI-Einträgen und Chat-Nachrichten, deshalb werden sie für deren vollständige Anzeige benötigt. Peer-Daten sollen sowohl im Backend als auch lokal als eigene Daten-Strukturen gespeichert werden.
+Peer-Daten sind Teil der Information von PoI-Einträgen und Chat-Nachrichten, deshalb werden sie für deren vollständige Anzeige benötigt. Peer-Daten werden sowohl im Backend als auch lokal gespeichert.
 
 \subsubsection{Synchronisation}
 Nachdem nun ein Benutzer für einen bestimmten Zeitraum offline war, kann eine Synchronisation
@@ -305,7 +305,10 @@ Sobald der Benutzer nach einer Netzwerk-Verbindungs-Unterbrechung wieder online 
 %\newgeometry{textheight=257mm}
 \enlargethispage{3\baselineskip} % allow 3 more lines on current page
 
-\section{Anforderungen und Existierende Lösungen}
+\section{Grundlagen und Existierende Lösungen}
+
+\textbf{TODO} Die folgende Gliederung wird bei feststehender Struktur überarbeitet.\\
+\noindent
 Nach einem Überblick über Grundlagen und Entwicklung ortsbezogener Anwendungen in den Abschnitten \ref{3_GRUNDL} und \ref{3_LBSN} werden die Funktionen einiger existierender Anwendungen beschrieben und miteinander verglichen (Abschnitte \ref{3_UEBER} und \ref{3_ANW}) und dann auf die Anwendungsfälle von VoyageX abgebildet. Das Kapitel schliesst mit einer Zusammenstellung von Web Mapping APIs (Abschnitt \ref{3_WEBMAPAPIS}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -484,7 +487,7 @@ In der nachstehenden Matrix sollen allgemeine und charakteristische Funktionen a
 	\caption{Abgrenzung des Funktionsumfangs}{
 \vspace{0.2cm}
 \begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-\item PoI - Eintragen (M)obile, (PC), (X)...Any
+\item PoI - Eintragen% (M)obile, (PC), (X)...Any
 \item PoI - Kommentieren / Review
 \item PoI - Suche nach Kategorien/Tags
 %\item PoI - Check In
@@ -575,6 +578,126 @@ Ein Feature daß auch für VoyageX interessant wäre, ist die Möglichkeit zum D
 Ein enstprechendes Feature für VoyageX könnte so aussehen:\\
 Ein Benutzer kann einen Pfad auf der Karte "`zeichnen"' für den VoyageX dann alle benötigten Kacheln und die im dargestelletn Gebiet eingetragenen POIs speichert. Alternativ könnte auch Pfad als äußere Begrenzung des zu speichernden Gebiets gezeichnet werden.
 Dieses Feature ist für VoyageX aber optional, bei ausreichenden zeitlichen Resourcen wird es implememtiert.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Web Mapping APIs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Web Mapping APIs}\label{3_WEBMAPAPIS}
+Bibliotheken und Werkzeuge für die Anzeige und Bearbeitung von Karten werden in der Regel von externen Anbietern geliefert.
+
+\subsubsection{Web Mapping Services}
+Die meisten Anwendungen nutzen frei verfügbare Online-Kartendienste (Web Mapping Services) zur Darstellung von Karten in der Benutzeroberfläche. Über die Service-APIs sind die Kartenrohdaten meist kostenlos erhältlich, für zusätzliche Geo-Coding-Leistungen wie Routenberechnungen gibt es unterschiedliche Limits oder Gebühren.\\
+Verbereitete Anbieter sind:
+\begin{itemize}
+  \item Google-Maps-API$^{\textbf{\ref{GOOGMAPSAPI}}}$
+% footnote
+\addtocounter{footnote}{1}
+\footnotetext{\label{GOOGMAPSAPI}\href{https://developers.google.com/maps/}{Google Maps API - https://developers.google.com/maps/}; letzter Zugriff: 26.01.2015}:
+Google bietet seinen Karten-Dienst seit 2005 an und hat einen großen Anteil an der schnellen Verbreitung
+dieser Dienst-Kategorie. Karten können mit unterschiedlichen Ansichts-Typen angezeigt werden, wie zum Beispiel Straßen-Ansicht oder Satelliten-Ansicht.
+  \item Bing-Maps$^{\textbf{\ref{BINGMAPSAPI}}}$
+% footnote
+\addtocounter{footnote}{1}
+\footnotetext{\label{BINGMAPSAPI}\href{https://msdn.microsoft.com/en-us/library/dd877180.aspx}{Bing Maps - https://msdn.microsoft.com/en-us/library/dd877180.aspx}; letzter Zugriff: 26.01.2015}
+Seit 2010 bietet die Suchmaschine von Microsoft ihren eigenen Kartendienst mit Google-Maps-ähnlichen Funktionen an.
+  \item OpenStreetMap$^{\textbf{\ref{OSMMAPS}}}$
+% footnote
+\addtocounter{footnote}{1}
+\footnotetext{\label{OSMMAPS}\href{http://wiki.openstreetmap.org/wiki/Frameworks}{OpenStreetMap- API - http://wiki.openstreetmap.org/wiki/Frameworks}; letzter Zugriff: 26.01.2015}:
+OSM ist ein Open-Source-Projekt; demenstprechend gibt es eine Vielzahl von Tools und Frameworks welche die API implementieren und deren Verwendung in einem Projekt unterstützen.
+\end{itemize}
+
+\subsubsection{Tile-Service-Providers}
+Tile-Services können von einem Web Mapping Service Provider oder aber auch eigenständig angeboten werden. Sie liefern die Bild-Dateien zur Darstellung von Karten in Form von (meistens) 256x256 Pixel großen Kacheln auf denen die zu den GIS-Daten korrespondierenden Karten-Elemente, also Straßen, Gebäude, Flüße, und dgl. angezeigt werden. Die Bild-Dateien können dabei entweder On-The-Fly aus den GIS-Daten generiert, oder vorab aus einem Projektions-Bild extrahiert werden. Zum Download wird eine mit den Koordinaten und dem Zoom-Level parametrisierte URL vom Tile-Service bereitgestellt.\\
+Auch für diesen Service gibt es eine großes Spektrum an freien und kommerziellen Anbietern. Als Beispiele für eigenständige Anbieter seien hier folgende angegeben: 
+\begin{itemize}
+  \item Mapbox$^{\textbf{\ref{MAPB}}}$
+% footnotes%
+\addtocounter{footnote}{1}%
+\footnotetext{\label{MAPB}\href{https://www.mapbox.com/}{Mapbox - https://www.mapbox.com/}; letzter Zugriff: 01.03.2015}%
+bietet Download-Kontingente von Free bis einige hundert Euro pro Monat.
+  \item MapQuest$^{\textbf{\ref{MAPQ}}}$
+% footnote
+\addtocounter{footnote}{1}
+\footnotetext{\label{MAPQ}\href{http://open.mapquest.de/}{MapQuest - http://open.mapquest.de/}; letzter Zugriff: 26.01.2015}
+\end{itemize}
+
+\subsubsection{Map Viewer}
+Für die Darstellung von Slippy-Maps LeafletJS$^{\textbf{\ref{FN_SLIPPYM}}}$
+% footnote%
+\addtocounter{footnote}{1}%
+\footnotetext{\label{FN_SLIPPYM}Slippy Map is, in general, a term referring to modern web maps which let you zoom and pan around (the map slips around when you drag the mouse).}
+können verschiedene Map Viewer Bibliotheken eingesetzt werden. WMS-API-Provider bieten zwar ihre eigene WMV-APIs an, es gibt aber auch
+Drittanbieter wie 
+\begin{itemize}
+  \item LeafletJS$^{\textbf{\ref{FN_LEAFL}}}$
+% footnote%
+\addtocounter{footnote}{1}%
+\footnotetext{\label{FN_LEAFL}\href{http://leafletjs.com/}{LeafletJS - http://leafletjs.com/}; letzter Zugriff: 01.03.2015}
+  \item OpenLayers$^{\textbf{\ref{FN_OPENLAY}}}$
+% footnote%
+\addtocounter{footnote}{1}%
+\footnotetext{\label{FN_OPENLAY}\href{http://openlayers.org/}{OpenLayers - http://openlayers.org/}; letzter Zugriff: 01.03.2015}
+  \item JMapViewer{$^{\textbf{\ref{FN_JMAPV}}}$}
+% footnote%
+\addtocounter{footnote}{1}%
+\footnotetext{\label{FN_JMAPV}\href{http://wiki.openstreetmap.org/wiki/JMapViewer}{JMapViewer - http://wiki.openstreetmap.org/wiki/JMapViewer}; letzter Zugriff: 01.03.2015}
+\end{itemize}
+, welche für die Integration von Karten-Darstellungen in Web-Apps oder native Anwendungen genutzt werden
+
+
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Kapitel 4: Anforderungen
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Anforderungen}
+
+%Im folgenden Kapitel werden die Anforderungen an VoyageX beschrieben.\\ \\
+%In Abschnitt \ref{4_FU} wird zunächst der geplante Funktionsumfang beschrieben. In
+%Abschnitt \ref{4_UC} werden die mit den Funktionen anwendbaren Use-Cases aufgezählt.
+%In Abschnitt \ref{4_MAWA} werden Implementierungs-Möglichkeiten von Mobile-Apps und Web-Apps verglichen,
+%und anschließend die spezifischen Anforderungen an einen Web-App-Client erläutert (Abschnitt \ref{4_ACB}). Am Ende des Kapitels werden in Abschnitt \ref{4_ES} die Einschränkungen für die im Rahmen dieser Bachelor-Arbeit entwickelte Anwendung zusammengefasst.
+
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Kapitel 5: Realisierung mit VoyageX
+% for active gps (publish der eigenen position - powersaving off mode und app im vordergrund
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Realisierung mit VoyageX}
+
+\textbf{TODO} Die folgende Gliederung wird bei feststehender Struktur überarbeitet.\\
+\noindent
+VoyageX ist zugleich eine synchrone kooperative wie auch eine asynchrone Einzel-Benutzer Anwendung. Welcher der beiden Operationsmodi gerade aktiv ist hängt vom Vorhandensein einer Netzwerkverbindung ab. Für jeden der beiden Operationsmodi müssen spezifische Problemlösungen gefunden werden.\\ \\
+Im folgenden Kapitel werden Entwurfs-Konzepte von VoyageX und deren Implementierung beschrieben. Beides leitet sich aus den primären Anforderungen an die Anwendung ab, die hier noch einmal zusammengefasst werden:
+	\begin{itemize}
+		\item Plattformunabhängige Kooperative Bearbeitung von Points of Interest:
+			\begin{itemize}
+				\item synchron (online)
+				\item asynchron (offline)
+			\end{itemize}
+		\item Plattformunabhängige Interaktion von Benutzern:
+			\begin{itemize}
+				\item Kommunikation
+				\item Steuerung entfernter View-Objekte
+			\end{itemize}
+	\end{itemize}
+Für die Realisierung der geforderten Funktionalität ist eine plattformunabhängige Implementierung in Form einer Web-Anwendung$^{\textbf{\ref{COMMENT_WEBAPP_1}}}$
+% footnotes
+\addtocounter{footnote}{1}
+\footnotetext{\label{COMMENT_WEBAPP_1}Die Plattformunabhängigkeit wird bei Webanwendungen dadurch erreicht, daß die graphische Benutzer-Schnittstelle (GUI) innerhalb einer standardisierten Laufzeitumgebung (Html, Javascript, ...) einer auf allen Plattformen verfügbaren Client-Software, nämlich eines Browsers, ausgeführt wird.}
+geeignet.\\ \\
+In Abschnitt \ref{5_SPI} wird die gewählte Implementierungsform, das SPI vorgestellt. In Abschnitt \ref{5_SA} wird die System-Architektur beschrieben. In den Abschnitten \ref{5_BE} und  \ref{5_FE} werden die technischen Grundlagen und Komponenten des Backends so wie des Frontends beleuchtet. In den Abschnitten \ref{5_KARBE}, \ref{5_OFFL} und \ref{5_INTER} wird die Realisierung der Funktionen erläutert.
+
+\subsection{Einschränkungen beim Entwicklungsprozess}\label{4_ES}
+Die Entwicklung von VoyageX verfolgt als Ziel die Entwicklung eines Prototyps für produktiv einsetzbare Teil-Komponenten zum Offline-Betrieb und zur Benutzer-Interaktion, aber nicht die Entwicklung neuer Social-Features. Community Funktionalität wird nur so weit implementiert, als dies für eine Lauffähigkeit und Testbarkeit der Anwendung erforderlich ist.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Anwendungsfälle für VoyageX
@@ -677,123 +800,6 @@ Das Backend übernimmt Benutzer-Verwaltungs und Synchronisations-Aufgaben. Für 
 			Benachrichtigung an Benutzer über Erlaubnis zur Wahrnehmung eines anderen Benutzers & y & n & y & y & \#  \\ \hline
 		\end{tabulary}
 	\end{table}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Web Mapping APIs
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Web Mapping APIs}\label{3_WEBMAPAPIS}
-Bibliotheken und Werkzeuge für die Anzeige und Bearbeitung von Karten werden in der Regel von externen Anbietern geliefert.
-
-\subsubsection{Web Mapping Services}
-Die meisten Anwendungen nutzen frei verfügbare Online-Kartendienste (Web Mapping Services) zur Darstellung von Karten in der Benutzeroberfläche. Über die Service-APIs sind die Kartenrohdaten meist kostenlos erhältlich, für zusätzliche Geo-Coding-Leistungen wie Routenberechnungen gibt es unterschiedliche Limits oder Gebühren.\\
-Verbereitete Anbieter sind:
-\begin{itemize}
-  \item Google-Maps-API$^{\textbf{\ref{GOOGMAPSAPI}}}$
-% footnote
-\addtocounter{footnote}{1}
-\footnotetext{\label{GOOGMAPSAPI}\href{https://developers.google.com/maps/}{Google Maps API - https://developers.google.com/maps/}; letzter Zugriff: 26.01.2015}:
-Google bietet seinen Karten-Dienst seit 2005 an und hat einen großen Anteil an der schnellen Verbreitung
-dieser Dienst-Kategorie. Karten können mit unterschiedlichen Ansichts-Typen angezeigt werden, wie zum Beispiel Straßen-Ansicht oder Satelliten-Ansicht.
-  \item Bing-Maps$^{\textbf{\ref{BINGMAPSAPI}}}$
-% footnote
-\addtocounter{footnote}{1}
-\footnotetext{\label{BINGMAPSAPI}\href{https://msdn.microsoft.com/en-us/library/dd877180.aspx}{Bing Maps - https://msdn.microsoft.com/en-us/library/dd877180.aspx}; letzter Zugriff: 26.01.2015}
-Seit 2010 bietet die Suchmaschine von Microsoft ihren eigenen Kartendienst mit Google-Maps-ähnlichen Funktionen an.
-  \item OpenStreetMap$^{\textbf{\ref{OSMMAPS}}}$
-% footnote
-\addtocounter{footnote}{1}
-\footnotetext{\label{OSMMAPS}\href{http://wiki.openstreetmap.org/wiki/Frameworks}{OpenStreetMap- API - http://wiki.openstreetmap.org/wiki/Frameworks}; letzter Zugriff: 26.01.2015}:
-OSM ist ein Open-Source-Projekt; demenstprechend gibt es eine Vielzahl von Tools und Frameworks welche die API implementieren und deren Verwendung in einem Projekt unterstützen.
-\end{itemize}
-
-\subsubsection{Tile-Service-Providers}
-Tile-Services können von einem Web Mapping Service Provider oder aber auch eigenständig angeboten werden. Sie liefern die Bild-Dateien zur Darstellung von Karten in Form von (meistens) 256x256 Pixel großen Kacheln auf denen die zu den GIS-Daten korrespondierenden Karten-Elemente, also Straßen, Gebäude, Flüße, und dgl. angezeigt werden. Die Bild-Dateien können dabei entweder On-The-Fly aus den GIS-Daten generiert, oder vorab aus einem Projektions-Bild extrahiert werden. Zum Download wird eine mit den Koordinaten und dem Zoom-Level parametrisierte URL vom Tile-Service bereitgestellt.\\
-Auch für diesen Service gibt es eine großes Spektrum an freien und kommerziellen Anbietern. Als Beispiele für eigenständige Anbieter seien hier folgende angegeben: 
-\begin{itemize}
-  \item Mapbox$^{\textbf{\ref{MAPB}}}$
-% footnotes%
-\addtocounter{footnote}{1}%
-\footnotetext{\label{MAPB}\href{https://www.mapbox.com/}{Mapbox - https://www.mapbox.com/}; letzter Zugriff: 01.03.2015}%
-bietet Download-Kontingente von Free bis einige hundert Euro pro Monat.
-  \item MapQuest$^{\textbf{\ref{MAPQ}}}$
-% footnote
-\addtocounter{footnote}{1}
-\footnotetext{\label{MAPQ}\href{http://open.mapquest.de/}{MapQuest - http://open.mapquest.de/}; letzter Zugriff: 26.01.2015}
-\end{itemize}
-
-\subsubsection{Map Viewer}
-Für die Darstellung von Slippy-Maps LeafletJS$^{\textbf{\ref{FN_SLIPPYM}}}$
-% footnote%
-\addtocounter{footnote}{1}%
-\footnotetext{\label{FN_SLIPPYM}Slippy Map is, in general, a term referring to modern web maps which let you zoom and pan around (the map slips around when you drag the mouse).}
-können verschiedene Map Viewer Bibliotheken eingesetzt werden. WMS-API-Provider bieten zwar ihre eigene WMV-APIs an, es gibt aber auch
-Drittanbieter wie 
-\begin{itemize}
-  \item LeafletJS$^{\textbf{\ref{FN_LEAFL}}}$
-% footnote%
-\addtocounter{footnote}{1}%
-\footnotetext{\label{FN_LEAFL}\href{http://leafletjs.com/}{LeafletJS - http://leafletjs.com/}; letzter Zugriff: 01.03.2015}
-  \item OpenLayers$^{\textbf{\ref{FN_OPENLAY}}}$
-% footnote%
-\addtocounter{footnote}{1}%
-\footnotetext{\label{FN_OPENLAY}\href{http://openlayers.org/}{OpenLayers - http://openlayers.org/}; letzter Zugriff: 01.03.2015}
-  \item JMapViewer{$^{\textbf{\ref{FN_JMAPV}}}$}
-% footnote%
-\addtocounter{footnote}{1}%
-\footnotetext{\label{FN_JMAPV}\href{http://wiki.openstreetmap.org/wiki/JMapViewer}{JMapViewer - http://wiki.openstreetmap.org/wiki/JMapViewer}; letzter Zugriff: 01.03.2015}
-\end{itemize}
-, welche für die Integration von Karten-Darstellungen in Web-Apps oder native Anwendungen genutzt werden
-
-
-%\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Kapitel 4: Anforderungen
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Anforderungen}
-
-%Im folgenden Kapitel werden die Anforderungen an VoyageX beschrieben.\\ \\
-%In Abschnitt \ref{4_FU} wird zunächst der geplante Funktionsumfang beschrieben. In
-%Abschnitt \ref{4_UC} werden die mit den Funktionen anwendbaren Use-Cases aufgezählt.
-%In Abschnitt \ref{4_MAWA} werden Implementierungs-Möglichkeiten von Mobile-Apps und Web-Apps verglichen,
-%und anschließend die spezifischen Anforderungen an einen Web-App-Client erläutert (Abschnitt \ref{4_ACB}). Am Ende des Kapitels werden in Abschnitt \ref{4_ES} die Einschränkungen für die im Rahmen dieser Bachelor-Arbeit entwickelte Anwendung zusammengefasst.
-
-
-
-\subsection{Einschränkungen beim Entwicklungsprozess}\label{4_ES}
-Die Entwicklung von VoyageX verfolgt als Ziel die Entwicklung eines Prototyps für produktiv einsetzbare Teil-Komponenten zum Offline-Betrieb und zur Benutzer-Interaktion, aber nicht die Entwicklung neuer Social-Features. Community Funktionalität wird nur so weit implementiert, als dies für eine Lauffähigkeit und Testbarkeit der Anwendung erforderlich ist.
-
-
-\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Kapitel 5: Realisierung mit VoyageX
-% for active gps (publish der eigenen position - powersaving off mode und app im vordergrund
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Realisierung mit VoyageX}
-VoyageX ist zugleich eine synchrone kooperative wie auch eine asynchrone Einzel-Benutzer Anwendung. Welcher der beiden Operationsmodi gerade aktiv ist hängt vom Vorhandensein einer Netzwerkverbindung ab. Für jeden der beiden Operationsmodi müssen spezifische Problemlösungen gefunden werden.\\ \\
-Im folgenden Kapitel werden Entwurfs-Konzepte von VoyageX und deren Implementierung beschrieben. Beides leitet sich aus den primären Anforderungen an die Anwendung ab, die hier noch einmal zusammengefasst werden:
-	\begin{itemize}
-		\item Plattformunabhängige Kooperative Bearbeitung von Points of Interest:
-			\begin{itemize}
-				\item synchron (online)
-				\item asynchron (offline)
-			\end{itemize}
-		\item Plattformunabhängige Interaktion von Benutzern:
-			\begin{itemize}
-				\item Kommunikation
-				\item Steuerung entfernter View-Objekte
-			\end{itemize}
-	\end{itemize}
-Für die Realisierung der geforderten Funktionalität ist eine plattformunabhängige Implementierung in Form einer Web-Anwendung$^{\textbf{\ref{COMMENT_WEBAPP_1}}}$
-% footnotes
-\addtocounter{footnote}{1}
-\footnotetext{\label{COMMENT_WEBAPP_1}Die Plattformunabhängigkeit wird bei Webanwendungen dadurch erreicht, daß die graphische Benutzer-Schnittstelle (GUI) innerhalb einer standardisierten Laufzeitumgebung (Html, Javascript, ...) einer auf allen Plattformen verfügbaren Client-Software, nämlich eines Browsers, ausgeführt wird.}
-geeignet.\\ \\
-In Abschnitt \ref{5_SPI} wird die gewählte Implementierungsform, das SPI vorgestellt. In Abschnitt \ref{5_SA} wird die System-Architektur beschrieben. In den Abschnitten \ref{5_BE} und  \ref{5_FE} werden die technischen Grundlagen und Komponenten des Backends so wie des Frontends beleuchtet. In den Abschnitten \ref{5_KARBE}, \ref{5_OFFL} und \ref{5_INTER} wird die Realisierung der Funktionen erläutert.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Mobile Apps und Web Applications
