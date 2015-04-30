@@ -10,39 +10,68 @@
 % Motivation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Motivation}
+Information ist heutzutage fast immer und überall verfügbar - für den Zugang müssen lediglich 2 Voraussetzungen erfüllt sein.
+\begin{enumerate}
+\item Ein internetfähiges (mobiles) Endgerät mit ausreichend Speicher für die Installation von informationsverarbeitender Software
+\item Eine Netzwerk-Verbindung ins Internet
+\end{enumerate}
+% Egal ob ein mobiler Benutzer die Reisezeit in einem öffentlichen Verkehrsmittel für Erledigung von Office-Aufgaben nutzen, oder Informationen vor Ort unmittelbar in seine Arbeit integrieren möchte,
+Das selbe gilt nicht nur für den Zugang zu existierender Information, sondern auch für das Bearbeiten und Erstellen neuer Informationen während der Nutzung einer Anwendung.\\ \\
+\noindent
+Die Funktionalität der Geräte ist in der Regel nicht ortsgebunden, allerdings ist der Benutzer für Energie-Versorgung und -Verbrauch selbst verantwortlich$^{\textbf{\ref{CMTAKKU}}}$%
+% footnote
+%+ )hardware-gebunden! zu Engpässen bei der Datenübermittlung
+\addtocounter{footnote}{1}%
+\footnotetext{\label{CMTAKKU}Die Akkulaufzeit hängt neben der Akkuleistung stark von den Einstellungen und der Nutzung des betriebenen Geräts ab.}. In jedem Fall kann man aber den Energie-Bedarf für einen geplanten Zeitraum abschätzen, und die benötigten Kapazitäten$^{\textbf{\ref{CMTKAPAZ}}}$%
+% footnote
+%+ )hardware-gebunden! zu Engpässen bei der Datenübermittlung
+\addtocounter{footnote}{1}%
+\footnotetext{\label{CMTKAPAZ}Gegebenenfalls durch Anschaffung mehrerer Akkus oder eines Photozellen-betriebenen Ladegeräts.} planen und bereitstellen.\\ \\
+\noindent
+Während die mobile Hardware also
+% mittlerweile weltweit für viele Menschen erhältlich und erschwinglich ist (und in der Regel auch funktioniert)
+einen kalkulierbaren Faktor darstellt%
+, hängt die Verfügbarkeit einer Netzwerk-Verbindung von mehreren Faktoren ab, die sich der Kontrolle des Benutzers entziehen.\\
+Zum einen gibt es fernab der Ballungszentren noch immer Funklöcher, die von der Netzabdeckung des jeweiligen Mobilfunk-Anbieters abhängen$^{\textbf{\ref{CMTNETZABD}}}$%
+% footnote
+%+ )hardware-gebunden! zu Engpässen bei der Datenübermittlung
+\addtocounter{footnote}{1}%
+\footnotetext{\label{CMTNETZABD}Eine Übersicht dazu findet sich unter \href{http://www.izgmf.de/scripts/forum/index.php?id=51238}{http://www.izgmf.de/scripts/forum/index.php?id=51238} (letzter Zugriff: 26.04.2015)\\
+Satelliten-Telefonie sei an dieser Stelle ausgespart, da hier ein Standard-Szenario für "`normale"' Anwender beschrieben werden soll.}.
+%, je weiter man sich von einer Metropole entfernt desto höher die Wahrscheinlichkeit sich in einem Funkloch wiederzufinden.
+Zum anderen kann die Verbindung auch an bestimmten innerstädtischen Orten wie im U-Bahn-System oder in stark abgeschirmten Gebäuden, ebenso in Verkehrsmitteln wie Reisezügen oder Flugzeugen sehr instabil oder gar nicht verfügbar sein.\\ \\
+\noindent
+%Eine Abhängigkeit von der Verfügbarkeit einer Netzwerk-Verbindung könnte aber eine Anwendung bei fehlender Nutzbarkeit im Offline-Betrieb für den mobilen Benutzer unbenutzbar machen.\\ \\
+Eine Lösung der Abhängigkeit mobiler Anwendungen von der Verfügbarkeit einer Netzwerk-Verbindung durch Aufrechterhaltung der Funktionsfähigkeit im Offline-Betrieb, könnte den Nutzen auch für einen mobilen Benutzer deutlich steigern, oder eindringlicher formuliert:\\ \\
+"`We can’t keep building Apps with the Desktop Mindset of permanent, fast Connectivity, where a temporary Disconnection or slow Service is regarded as a Problem and communicated as an error."'\cite{OFFLFIRST:WWW}.
+	 
+	\begin{table}[H]
+  		\begin{adjustwidth}{-1.5cm}{1.5cm}
+		\centering
+		\begin{tabulary}{18cm}{ C C }
+			\includegraphics[scale=0.4]{bilder/hiking.jpg} & \includegraphics[scale=0.4]{bilder/tube.jpg}\\
+			\multicolumn{2}{c}{
+				\begingroup
+    				\fontsize{8pt}{12pt}\selectfont
+    				\copyright\href{http://hood.ie/}{Hoodie Open Source Project} licensed under 					\href{http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en}{CC BY-NC-ND 4.0} 
+				\endgroup
+			}
+		\end{tabulary}
+  		\end{adjustwidth}
+	\end{table}
 
-Seit der Entwicklung des ersten personalisierten Lokalisierungssystems$^{\textbf{\ref{ATTACTBADG}}}$%
+%\\ \\
+\noindent
+Letztendlich wird die Möglichkeit zur Verbindungs-unabhängigen Realisierung einer Funktion durch ihren Zweck bedingt. Eine Navigations-Hilfe sollte den Benutzer in Echtzeit über eine zu wählende Abzweigung informieren, während Kommunikation zwischen Benutzern nicht nur über Telefonie oder Instant-Messaging, sondern oft auch per Email noch sinnvoll sein kann.\\ \\
+%Für synchrone Interaktion zwischen Benutzern ist ja ein ursprüngliche Ziel der Vernetzung. Bei der Entwicklung der Anforderungen kann aber berücksichtigt werden, daß auch für synchrone Interaktions-Funktionalität, wie beispielsweise Instant-Messaging, eine optionale asynchrone Alternative in Form einer verzögerten Nachrichten-Übermittlung, immer noch den zugedachten Zweck erfüllen kann.\\ \\
+\noindent
+Im Rahmen dieser Arbeit soll nun eine Web-Awendung für kollaboratives Geo-Tagging$^{\textbf{\ref{GEOTAG}}}$%
 % footnote
 \addtocounter{footnote}{1}%
-\footnotetext{\label{ATTACTBADG}\href{http://www.cl.cam.ac.uk/research/dtg/attarchive/ab.html}{Active Badge System - http://www.cl.cam.ac.uk/research/dtg/attarchive/ab.html}; letzter Zugriff: 23.04.2015}
-anfangs der 1990er haben Verbreitung und Reichweite von Endgeräten mit der Fähigkeit zur Positions-Bestimmung eine nahezu ubiquitäre Dimension erreicht. Fast jeder Mensch kann nun seine aktuellen geographischen Standort beliebig vielen andern Menschen mitteilen, und Objekte oder sogar Personen anhand ihre Positions-Daten identifizieren. \\ \\
-Seit Mitte 2000 ist vor diesem Hintergrund eine Vielzahl von Anwendungen mit einer Einbindung "`standortbezogener Dienste"' entwickelt worden. Die Möglichkeit einer Anzeige von Informationen zu Markierungs-Punkten auf einer Karte kann in vielerlei Hinsicht genutzt werden, unter anderem für:
-\begin{itemize}
-  \item Geo-Tagging$^{\textbf{\ref{GEOTAG}}}$
-% footnote
-\addtocounter{footnote}{1}%
-\footnotetext{\label{GEOTAG}Geo-Tagging bedeutet die Referenz von Informationen zu einem Ort und wird in Abschnitt \ref{sec:GL:GEOTAG} noch genauer erläutert}%
-von Orten oder Objekten
-  \item zeitbezogene Lokalisierung von Personen oder Ereignissen
-\end{itemize}
-\vspace{1ex}
-Für Orte bzw. Objekte (Points of Interest) oder Ereignisse (Events of Interest) können die angezeigten Informationen neben einer objektiven Beschreibung auch subjektive Bewertungen oder Empfehlungen beinhalten, für Personen (People of Interest) kann die Möglichkeit zur direkten Kontaktaufnahme über einen Chat-Dialog verknüpft werden.\\ \\
-Viele der aktuellen mobilen Anwendungen nutzen eigene Backends und freie Web-Services von Dritten als Geo-Informations-Quellen. Diese Clients werden vorwiegend als native Anwendungen über den App-Store$^{\textbf{\ref{CMTAPPST}}}$%
-% footnote
-\addtocounter{footnote}{1}%
-\footnotetext{\label{CMTAPPST}\href{http://de.wikipedia.org/wiki/App\_Store\_\%28iOS\%29}{App-Store - http://de.wikipedia.org/wiki/App\_Store\_\%28iOS\%29}; letzter Zugriff: 23.04.2015} für iOS$^{\textbf{\ref{CMTIOS}}}$%
-% footnote
-\addtocounter{footnote}{1}%
-\footnotetext{\label{CMTIOS}\href{http://de.wikipedia.org/wiki/Liste\_von\_iOS-Ger\%C3\%A4ten}{iOS - http://de.wikipedia.org/wiki/Liste\_von\_iOS-Ger\%C3\%A4ten}; letzter Zugriff: 23.04.2015} oder Google-Play$^{\textbf{\ref{CMTGOOPL}}}$%
-% footnote
-\addtocounter{footnote}{1}%
-\footnotetext{\label{CMTGOOPL}\href{http://de.wikipedia.org/wiki/Google\_Play}{Google-Play - http://de.wikipedia.org/wiki/Google\_Play}; letzter Zugriff: 23.04.2015} für Android$^{\textbf{\ref{CMTANDROID}}}$%
-% footnote
-\addtocounter{footnote}{1}%
-\footnotetext{\label{CMTANDROID}\href{http://de.wikipedia.org/wiki/Android\_\%28Betriebssystem\%29}{Android - http://de.wikipedia.org/wiki/Android\_\%28Betriebssystem\%29}; letzter Zugriff: 23.04.2015} angeboten.%\\
-%Bearbeitung von Karteneinträgen im Offline-Modus wird nicht angeboten.
- \\ \\
-Im Rahmen dieser Arbeit soll ein Prototyp einer Web-Awendung für kollaboratives Geo-Tagging entwickelt werden.% In Abschnitt \ref{2_VOYAGEX} folgt eine Beschreibung der gewünschten Funktionen. 
+\footnotetext{\label{GEOTAG}Geo-Tagging bedeutet die Referenz von Informationen zu einem Ort und wird in Abschnitt \ref{sec:GL:GEOTAG} noch genauer erläutert}
+entwickelt werden. Die Anwendungs-Funktionen sollen dabei weitestgehend sowohl im Multi-User-Online-Modus wie auch im Single-User-Offline-Modus verfügbar sein.
+%Ergebnisse von Verbindungs-abhängigen Aktionen, die im Offline-Modus ausgeführt wurden, werden bei wieder hergestellter Netzwerk-Verbindung mit dem System synchronisiert.
+% In Abschnitt \ref{2_VOYAGEX} folgt eine Beschreibung der gewünschten Funktionen. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Aufbau der Arbeit / Gliederung
@@ -90,73 +119,69 @@ Im folgenden ersten Kapitel wird zunächst in Abschnitt \ref{2_SZEN} das Problem
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % VoyageX
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Szenarien}\label{2_SZEN}
-Information ist heutzutage fast immer und überall verfügbar - für den Zugang müssen lediglich 2 Voraussetzungen erfüllt sein.
-\begin{enumerate}
-\item Ein internetfähiges (mobiles) Endgerät mit ausreichend Speicher für die Installation von informationsverarbeitender Software
-\item Eine Netzwerk-Verbindung ins Internet
-\end{enumerate}
-% Egal ob ein mobiler Benutzer die Reisezeit in einem öffentlichen Verkehrsmittel für Erledigung von Office-Aufgaben nutzen, oder Informationen vor Ort unmittelbar in seine Arbeit integrieren möchte,
-Das selbe gilt nicht nur für den Zugang zu existierender Information, sondern auch für das Bearbeiten und Erstellen neuer Informationen während der Nutzung einer Anwendung.\\ \\
-\noindent
-Die Funktionalität der Geräte ist in der Regel nicht ortsgebunden, allerdings ist der Benutzer für Energie-Versorgung und -Verbrauch selbst verantwortlich$^{\textbf{\ref{CMTAKKU}}}$%
-% footnote
-%+ )hardware-gebunden! zu Engpässen bei der Datenübermittlung
-\addtocounter{footnote}{1}%
-\footnotetext{\label{CMTAKKU}Die Akkulaufzeit hängt neben der Akkuleistung stark von den Einstellungen und der Nutzung des betriebenen Geräts ab.}. In jedem Fall kann man aber den Energie-Bedarf für einen geplanten Zeitraum abschätzen, und die benötigten Kapazitäten$^{\textbf{\ref{CMTKAPAZ}}}$%
-% footnote
-%+ )hardware-gebunden! zu Engpässen bei der Datenübermittlung
-\addtocounter{footnote}{1}%
-\footnotetext{\label{CMTKAPAZ}Gegebenenfalls durch Anschaffung mehrerer Akkus oder eines Photozellen-betriebenen Ladegeräts.} planen und bereitstellen.\\ \\
-\noindent
-Während die mobile Hardware also
-% mittlerweile weltweit für viele Menschen erhältlich und erschwinglich ist (und in der Regel auch funktioniert)
-einen kalkulierbaren Faktor darstellt%
-, hängt die Verfügbarkeit einer Netzwerk-Verbindung von mehreren Faktoren ab, die sich der Kontrolle des Benutzers entziehen.\\
-Zum einen gibt es fernab der Ballungszentren noch immer Funklöcher, die von der Netzabdeckung des jeweiligen Mobilfunk-Anbieters abhängen$^{\textbf{\ref{CMTNETZABD}}}$%
-% footnote
-%+ )hardware-gebunden! zu Engpässen bei der Datenübermittlung
-\addtocounter{footnote}{1}%
-\footnotetext{\label{CMTNETZABD}Eine Übersicht dazu findet sich unter \href{http://www.izgmf.de/scripts/forum/index.php?id=51238}{http://www.izgmf.de/scripts/forum/index.php?id=51238} (letzter Zugriff: 26.04.2015)\\
-Satelliten-Telefonie sei an dieser Stelle ausgespart, da hier ein Standard-Szenario für "`normale"' Anwender beschrieben werden soll.}.
-%, je weiter man sich von einer Metropole entfernt desto höher die Wahrscheinlichkeit sich in einem Funkloch wiederzufinden.
-Zum anderen kann die Verbindung auch an bestimmten innerstädtischen Orten wie im U-Bahn-System oder stark abgeschirmten Gebäuden, oder in Verkehrsmitteln wie Reisezügen oder Flugzeugen sehr instabil oder gar nicht verfügbar sein.\\ \\
-\noindent
-%Eine Abhängigkeit von der Verfügbarkeit einer Netzwerk-Verbindung könnte aber eine Anwendung bei fehlender Nutzbarkeit im Offline-Betrieb für den mobilen Benutzer unbenutzbar machen.\\ \\
-Eine Lösung der Abhängigkeit mobiler Anwendungen von der Verfügbarkeit einer Netzwerk-Verbindung durch Aufrechterhaltung der Funktionsfähigkeit im Offline-Betrieb, könnte den Nutzen auch für einen mobilen Benutzer deutlich steigern, oder anders formuliert:\\
-"`We can’t keep building Apps with the Desktop Mindset of permanent, fast Connectivity, where a temporary Disconnection or slow Service is regarded as a Problem and communicated as an error."'\cite{OFFLFIRST:WWW}.
-	
-	\begin{table}[H]
-  		\begin{adjustwidth}{-1.5cm}{1.5cm}
-		\centering
-		\begin{tabulary}{18cm}{ C C }
-			\includegraphics[scale=0.4]{bilder/hiking.jpg} & \includegraphics[scale=0.4]{bilder/tube.jpg}\\
-			\multicolumn{2}{c}{Quelle: \href{http://hood.ie/}{http://hood.ie/}}
-		\end{tabulary}
-  		\end{adjustwidth}
-	\end{table}
-
-%\\ \\
-\noindent
-Letztendlich wird die Möglichkeit zur verbindungsunabhängigen Realisierung einer Funktion durch ihren Zweck bedingt. Bei der Entwicklung der Anforderungen kann aber berücksichtigt werden, daß auch für synchrone Interaktions-Funktionalität, wie beispielsweise Instant-Messaging, eine optionale asynchrone Alternative in Form einer verzögerten Nachrichten-Übermittlung, immer noch den zugedachten Zweck erfüllen kann.\\ \\
-\noindent
-%Seit der Einführung des AppCache-Standards in Html5 
-% Seit Ende der 2000-nuller Jahre
-In Rahmen des Projekts \textbf{Pumas Voyage}$^{\textbf{\ref{WIKIGOOGMAP}}}$%
+\subsection{Szenario}\label{2_SZEN}
+In Rahmen des Projekts \textbf{Pumas Voyage}$^{\textbf{\ref{CMTPUMVOY}}}$%
 % footnote
 \addtocounter{footnote}{1}%
-\footnotetext{\label{WIKIGOOGMAP}\href{http://ceur-ws.org/Vol-1227/paper33.pdf}{Pumas Voyage - http://ceur-ws.org/Vol-1227/paper33.pdf}; letzter Zugriff: 26.04.2015} werden Konzepte und Werkzeuge für die Beteiligung von Schülern an der Verkehrsraumplanung entwickelt. Die Schüler sollen dabei, mit Hilfe von mobilen Endgeräten und einer darauf ausgeführten Web-Anwendung, ihren auf einer Karte dargestellten Schulweg durch Einträge von markanten Punkten mit einer Bewertung von Sicher/Gut oder Gefährlich/Schlecht, und einem optionalen Kommentar, dokumentieren$^{\textbf{\ref{CMTPUMVOYGEOTAG}}}$%
+\footnotetext{\label{CMTPUMVOY}\href{http://ceur-ws.org/Vol-1227/paper33.pdf}{Pumas Voyage - http://ceur-ws.org/Vol-1227/paper33.pdf}; letzter Zugriff: 26.04.2015} werden Konzepte und Werkzeuge für die Beteiligung von Schülern an der Verkehrsraumplanung entwickelt. Die Schüler sollen dabei, mit Hilfe von mobilen Endgeräten und einer darauf ausgeführten Web-Anwendung, ihren Schulweg durch Einträge von markanten Punkten  auf einer Karte mit einer Bewertung von Sicher/Gut oder Gefährlich/Schlecht, und einem optionalen Kommentar, dokumentieren$^{\textbf{\ref{CMTPUMVOYGEOTAG}}}$
 % footnote
 \addtocounter{footnote}{1}%
 \footnotetext{\label{CMTPUMVOYGEOTAG}Man könnte diesen Vorgang auch als Verkehrsplanungs-spezifisches Geo-Tagging bezeichnen}.\\
-Für die Anzeige der Karte, die als Voraussetzung zur Bearbeitungung von Einträgen gesehen werden kann, ist eine Internet-Verbindung erforderlich. Außerdem ist ein Austausch der Daten mit anderen Benutzern noch nicht implementiert - auf jedem Gerät können nur die darauf gesicherten Daten angezeigt werden. Eine Synchronisation aller Benutzer/System-Daten und deren Anzeige auf allen Endgeräten würde die Anwendung um kollaborative Funktionalität erweitern, mit der es zum Beispiel die Möglichkeit zum unmittelbaren Feedback auf neue Einträge oder Änderungen gäbe. Damit aber keine Netzwerk-Verbindungs-Abhängigkeit entsteht sollte die Synchronisation für den Benutzer transparent durchgeführt werden.\\ \\
+Für die Anwendung gelten folgende Einschränkungen:
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
+\item Eine Voraussetzung für die Bearbeitung von PoI-Einträgen ist die Anzeige einer Karte in der Anwendungs-Oberfläche. Für die Bereitstellung der dazu benötigten Bild-Dateien ist eine Internet-Verbindung erforderlich.
+\item Ein Austausch der PoI-Daten mit anderen Benutzern ist nicht möglich - auf jedem Gerät können nur die darauf (lokal) gesicherten Daten angezeigt werden.
+\end{itemize}
+\vspace{1ex}
+Eine Netzwerk-Verbindungs-unabhängige Möglichkeit der Karten-Anzeige würde es den Benutzern erlauben, auch im Offline-Modus mit der Anwendung zu arbeiten.\\ \\
+Die Synchronisation aller Benutzer/System-Daten und deren Anzeige auf allen Endgeräten würde die Anwendung um kollaborative Funktionalität erweitern, mit der es zum Beispiel die Möglichkeit zum zeitversetzten oder auch unmittelbaren Feedback auf neue Einträge oder Änderungen gäbe.
+%Damit aber keine Netzwerk-Verbindungs-Abhängigkeit entsteht sollte die
+%Diese Synchronisation sollte für den Benutzer transparent durchgeführt werden.\\ \\
+\noindent
+Neben dem bereits realisierten Szenario des Pumas-Voyage Projekts soll nun auch ein fiktives Szenario für eine andere Anwendungsnutzer-Gruppe beschrieben werden.\\ \\
+Petra lebt in Berlin. Sie ist eine große Bewunderin von Street-Art und fährt in ihrer Freizeit gerne mit dem Fahrrad durch die Stadt um neue Werke zu entdecken und zu Fotografieren. Mit der VoyageX-Webapp speichert sie dann jedes neu entdeckte Plakat von El Bocho$^{\textbf{\ref{CMTELBOC}}}$%
+% footnote
+\addtocounter{footnote}{1}%
+\footnotetext{\label{CMTELBOC}\href{http://www.elbocho.net/}{El Bocho - http://www.elbocho.net/} (letzter Zugriff: 30.04.2015)} oder ein neues Street-Yogi-Korkmännchen$^{\textbf{\ref{CMTJOYFOX}}}$%
+% footnote
+\addtocounter{footnote}{1}%
+\footnotetext{\label{CMTJOYFOX}\href{http://de.wikipedia.org/wiki/Korkm\%C3\%A4nnchen}{Korkmännchen - http://de.wikipedia.org/wiki/Korkm\%C3\%A4nnchen} (letzter Zugriff: 30.04.2015)} von Joy Fox.
+\\ %Einmal im Jahr fährt sie für 3 wochen nach Südost-Asien in den Urlaub, \\
+Markus kommt ursprünglich auch aus Berlin, wohnt aber jetzt berufsbedingt in Neuruppin. Auch er interessiert sich für Street-Art. Petra und Markus kennen sich über Facebook, wo beide früher ihre Fotos gepostet haben. Er fährt mindestens 2 mal in der Woche nach Berlin. In der Stadt benutzt er meistens die öffentlichen Verkehrsmittel.\\ \\
+Seit seinem letzten Berlin-Besuch haben andere User neue Fundstücke in VoyageX eingetragen, und Markus möchte diese in echt sehen, bevor sie übermalt werden oder auf andere Weise verloren gehen. Zuhause hat er Lesezeichen für die PoIs erstellt, die er sich ansehen möchte, und auch die geplante Route für seine Besichtigungstour gespeichert. Auf der 1-stündigen Zugfahrt kommt er mit Klaus, einem Mitreisenden aus Wittstock, ins Gespräch. Als Markus ihm über das Motiv seiner Reise erzählt, würde Klaus gerne mal Fotos dieser Straßen-Kunst sehen. Von der unterbrochenen Internetverbindung im Zug merken die beiden nichts während Markus seine Fotos in VoyageX zeigt.\\ \\
+In Berlin angekommen beginnt Markus seine Tour. Gleich beim ersten PoI entdeckt er neben dem bereits eingetragenen Werk ein neues Street-Art-Fundstück und postet es als Kommentar mit Foto.\\
+Zum nächsten PoI nimmt er die U-Bahn. In der Station entdeckt er ein neues Poster von einer ihm unbekannten Künstlerin. Er macht ein Foto und speichert es. Da in der U-Bahn aber keine Mobil-Funk-Netzverbindung verfügbar ist, wird der Eintrag vom VoyageX-Client erst dann zum Server gepostet und damit für die anderen VoyageX-User sichtbar sein, wenn Markus das U-Bahn-System wieder verlässt.\\
+Als er (mittlerweile wieder oberirdisch) auf dem Weg zum nächsten PoI ist, wird er durch ein akkustisches Signal und einen blinkenden Pfeil in VoyageX darauf aufmerksam gemacht, daß einer seiner Kontakte in der Nähe ist. Es ist Petra, die beiden verabreden sich in einem Kaffee. Nachdem Petra auch Markus auf ihrer Karte "`ortet"', kann sie ihm eine Wegbeschreibung senden, in dem sie einen roten Pfad auf seiner Karte zeichnet. Beim Kaffee kann sie ihm dann auch noch verraten, wer die Künstlerin seines U-Bahn-Fundstückes ist, aber als er seinem VoyageX-Eintrag den Namen hinzufügen will, stellt er fest, daß ihm ein anderer VoyageX-User bereits zuvorgekommen ist.%\\
+%	\begin{table}[H]
+%  		\begin{adjustwidth}{-1cm}{1cm}
+%		\centering
+%		\begin{tabulary}{15cm}{C >{\centering}m{1cm} C >{\centering}m{1cm} C}
+%			\includegraphics[scale=0.6]{bilder/joy-fox-2.png} & & \includegraphics[scale=0.6]{bilder/wer-war-das} & & \includegraphics[scale=0.6]{bilder/petra-alert.png}
+%		\end{tabulary}
+%  		\end{adjustwidth}
+%	\end{table}
+%asien - überöandbus - nur wlsan - keine sim
+%kaum zu glauben - sie seiht das ien freun din der nähe ist
+
+%er bookmared alöe die ers sehen will
+%dann shauut er
+%irgedwann sieht er das petra in der nähe ist
+%er fragt wo sie sih treffen und wie er mal besten hin komt
+
+%offlien im zug nachhause macht er neue kommentare mit wietern fotos einträge mit ofotos.  (mnahce fotso 
+
+%als er zu hause ankommt kriegt er nahcrichten von ein paat lezten oder am nächsten morgen wacht er auf
+
+%Als er zu Hause die Bilder auf seinem Smartphone betrachtet schreibt er \\ \\
+\noindent
+%Seit der Einführung des AppCache-Standards in Html5 
+% Seit Ende der 2000-nuller Jahre
 %\noindent
 %\textbf{Ingress}$^{\textbf{\ref{CMTINGRS}}}$%
 % footnote
 %\addtocounter{footnote}{1}%
 %\footnotetext{\label{CMTINGRS}\href{http://de.wikipedia.org/wiki/Ingress\_\%28Spiel\%29}{Ingress - http://de.wikipedia.org/wiki/Ingress\_\%28Spiel\%29}; letzter Zugriff: 26.04.2015} ist ein Augmented-Reality-/Alternate-Reality-Spiel für mobile Geräte. Das Spiel wird im Freien gespielt, und die Spielwelt wird mit standortbezogenen Daten von realen sich an Gebäuden, Denkmälern und Objekten aufgebaut. Im Spiel existieren zwei Gruppierungen, die mit dem Ziel gegeneinander antreten, möglichst große öffentliche Bereiche unter ihre virtuelle Kontrolle zu bringen.\\ \\
 \noindent
-Eine Entkopplung von der Netzwerk-Verbindungs-Abhängigkeit muß also durch die Möglichkeit zum lokalen Speichern von Anwendungs-Daten, also auch durch das Vorhalten der für die Nutzung der Software benötigten System-Daten bewerkstelligt werden. Allerdings können aus Gründen der Wartbarkeit und der begrenzten Speicher-Kapazität nicht alle System-Daten am Endgerät gespeichert werden. Es ist daher erforderlich, eine Auswahl bezüglich der vom Benutzer benötigten Daten zu treffen und diese vorzuhalten - im Falle einer kartenbasierten Anwendung müssen dafür beispielsweise die Bild-Dateien für die darzustellenden Karten-Abschnitte vorgeladen werden. Die Vorlade-Auswahl kann mit Hife von aufgabenspezifischen Vorhersage-Algorithmen getroffen werden. Im gegebenen geographischen Kontext können die Vorhersage-Strategien beispielsweise auf Bewegungs-Routen basieren.
 
 
 %synchron bearbeitung von pois.
@@ -167,133 +192,177 @@ Eine Entkopplung von der Netzwerk-Verbindungs-Abhängigkeit muß also durch die 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % VoyageX
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{VoyageX}\label{2_VOYAGEX}
-Mit der in dieser Arbeit vorgestellten Web-Anwendung VoyageX sollen nun folgende Funktionen implementiert werden:
-\begin{itemize}
-  \item Kollaborative Bearbeitung von \texttt{Points of Interest (PoI)} auf einer interaktiven Karte
-  \item Interaktion zwischen Benutzern
+\subsection{Analyse}\label{2_VOYAGEX}
+%\subsubsection{Client und Benutzer/User}
+%Vorab noch Definitionen zweier in dieser Arbeit sehr häufig verwendete Begriffe:   
+%\begin{itemize}
+%	\item \textbf{Client}: Eine Anwendungs-Komponente des Frontends, je nach Kontext ist damit entweder der Browser oder der VoyageX-Client gemeint. 
+%	\item \textbf{Benutzer / User}: Eine Person, welche die Anwendung (insbesondere den Client) nutzt.
+%\end{itemize}
+%\vspace{2ex}
+Aus dem fiktiven Szenario können folgende 2 autonomen$^{\textbf{\ref{CMTAUTOGF}}}$%
+% footnote
+\addtocounter{footnote}{1}%
+\footnotetext{\label{CMTAUTOGF}Jede einzelne dieser Funktionen kann für sich schon als (ggf. einzige) Kernfunktion einer Anwendung dienen.} Basis-Funktionen
+%abgeleitet
+extrahiert
+werden:
+\enlargethispage{3\baselineskip} % allow 3 more lines on current page
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
+\item \textbf{Geo-Tagging}: Einträge für \texttt{Points of Interest (PoI)} erstellen
+\item \textbf{Informale Kommunikation}: Nachrichtenaustausch zwischen Personen
 \end{itemize}
-%Im Rahmen dieser Arbeit soll ein Prototyp einer Web-Awendung für kooperatives Geo-Tagging entwickelt werden. In Abschnitt \ref{2_VOYAGEX} folgt eine Beschreibung der gewünschten Funktionen. 
-Es müssen in diesem Rahmen aber sowohl weitere Anwendungskomponenten (z.B. ein Benutzersystem) als auch Konzepte zur Benutzerführung (z.B. die Gestaltung von Arbeits-Menus) durch alle benötigten Funktionen entwickelt werden, um die fertige Anwendung testen zu können. Im folgenden werden also auch die Konzepte und Funktionalität dieser Komponenten vorgestellt.
+Diese Funktionen werden nun durch Basiskonzepte kooperativer Systeme\cite{K1678:VERTSYS} (S.180-182) um eine kollaborative Dimension erweitert und wir spezifizieren:
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
+\item \textbf{Gemeinsame Objekte}: Alle Benutzer können die PoIs sehen und weitere Informationen hinzufügen. Dies entspricht auch einer impliziten formalen Kommunikation.
+\item \textbf{explizite formale Kommunikation}: Message Passing und Remote Procedure Calls (RPC)
+\end{itemize}
+Abschließend wird noch eine Verbindungs-Zustands-bezogene Dimension eingeführt:
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
+\item \textbf{online}: Uneingeschränkte Nutzung aller Funktionen
+\item \textbf{offline}: Nutzung möglichst aller Funktionen unter eventuell erforderlicher Anpassung des Funktions-Verhaltens
+\end{itemize}
+\vspace{1ex}\noindent
+Nach dieser Analyse der gewünschten Funktionen können wir die geplante Anwendung als "`kooperatives Netzwerk-Verbindungs-unabhängiges System"' mit 2 Basis-Funktionen beschreiben, wobei die Basis-Funktionen austauschbar sind.\\ \\
+% und für eine weitere Klassifikation keine Rolle spielen.\\ \\
+Kooperative Systeme können nach Grudin\cite{GRUDIN:CSCW} (S.19-26) mit einer Raum-Zeit-Matrix klassifiziert werden. Die räumliche Dimension ist für die hier zu entwickelnde Anwendung konstant, Orte werden als \texttt{verschieden} und \texttt{unvorhersehbar} vorausgesetzt, zeitlich kann aber in eine \texttt{synchrone} und eine \texttt{asynchrone} Kooperation differenziert werden. Zusammen mit dem Netzwerk-Verbindungs-Status lassen sich nun für die beiden Basis-Funktionen jeweils folgende Anwendungs-Dimensionen eingrenzen:\\
+%Die in den zuvor beschriebenen Szenarien benötigten Anwendungsfunktionen können wie folgt eingeteilt werden:
+%\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
+%\item \textbf{Geo-Tagging}: Einträge für \texttt{Points of Interest (PoI)} erstellen
+%\item \textbf{verbindungsunabhängig}: Benutzbarkeit der Anwendung auch im offline-Modus
+%\item \textbf{kollaborativ}: Interaktion durch Kooperation und Kommunikation
+%\begin{itemize}[noitemsep,topsep=0ex,parsep=0pt,partopsep=0pt]
+%\item Gemeinsame Objekte: Alle Benutzer können die PoIs sehen und weitere Informationen hinzufügen.
+%\item Austausch von Nachrichten: Benutzer können mittels Chat-Nachrichten kommunizieren.
+%\end{itemize}
+%\end{itemize}
+%Geo-Tagging ist 
+%Mit der in dieser Arbeit vorgestellten Web-Anwendung VoyageX sollen nun folgende Funktionen implementiert %werden:
+\newcolumntype{M}{>{\raggedright\arraybackslash}p{7.5cm}}
+%\begin{itemize}
+%  \item Kollaborative Bearbeitung von Points of Interest (PoI) auf einer interaktiven Karte
+\subparagraph{Kollaborative Bearbeitung von Points of Interest (PoI):}
+	\begin{table}[H]
+  		\begin{adjustwidth}{-1.7cm}{1.7cm}
+		\centering
+		\begin{tabulary}{19cm}{|C|M|M|}
+		%\begin{tabulary}{\columnwidth}{|C|L|L|}
+			\hline
+		  & \multicolumn{1}{c|}{online} & \multicolumn{1}{c|}{offline} \\ \hline
+synchron &
+%%Neu erstellte Einträge/Kommentare und Änderungen werden unmittelbar auf allen online-Clients angezeigt.
+				\begingroup
+    				\fontsize{9pt}{10pt}\selectfont
+\textbf{Benachrichtigungen bei Daten-Änderungen durch entfernte Benutzer}:\newline
+%\ref{2_POISYNCONL}
+Für eine kollaborative Anwendung gelten folgende Anforderungen: 
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0ex,parsep=1pt,partopsep=0pt]
+	\item Neu erstellte Einträge/Kommentare und Änderungen von entfernten Benutzern werden unmittelbar
+		  lokal angezeigt
+	\item Von einem Benutzer lokal neu erstellte Einträge/Kommentare und Änderungen werden unmittelbar
+		  auf entfernten online-Clients angezeigt
+\end{itemize}
+In der Praxis werden nur relevante Einträge auf jedem Client gespeichert, wobei sich die Relevanz auf geographische Nähe oder die Autorenschaft des Eintrags (z.B. von einer Freundin) gründet.
+				\endgroup
+&
+%%Neu erstellte Einträge/Kommentare und Änderungen werden in einer lokalen Warteschlange gespeichert und angezeigt.
+				\begingroup
+    				\fontsize{9pt}{10pt}\selectfont
+\textbf{Lokales Vorhalten und Speichern von Anwendungs-Daten}:\newline
+%\ref{2_POISYNCOFFL}
+Damit die Nutzung der Anwendung auch im Offline-Modus möglich bleibt, müssen folgende Anforderungen erfüllt werden:
+\begin{itemize}[leftmargin=*,noitemsep,topsep=0ex,parsep=1pt,partopsep=0pt]
+	\item Anwendungs-Daten (Poi-Einträge, Karten-Kachel-Bilder) werden aus dem lokalen Speicher gelesen
+	\item Neu erstellte Einträge/Kommentare und Änderungen werden in einer lokalen Warteschlange gespeichert
+\end{itemize}
+				\endgroup
+\\ \hline
+asynchron &
+%Beim Wechsel vom Offline- in den Online-Modus werden die lokalen Daten mit den System-Daten synchronisiert:\newline
+%			- die Daten aus der lokalen Warteschlange werden in die Backend-DB überspielt und alle online-Clients werden benachrichtigt\newline
+%			- Änderungen im Backend werden in die lokale DB eingespielt
+				\begingroup
+    				\fontsize{9pt}{10pt}\selectfont
+\textbf{Synchronisation von Daten-Änderungen}:\newline
+% \ref{2_POIASYNCONL}
+Beim Wechsel vom Offline- in den Online-Modus werden die lokalen Daten mit den System-Daten synchronisiert:
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
+	\item die Daten aus der lokalen Warteschlange werden in die Backend-DB überspielt und alle online-Clients werden benachrichtigt
+	\item Änderungen im Backend werden in die lokale DB eingespielt
+\end{itemize}
+				\endgroup
+		& \multicolumn{1}{c|}{-}
+		\\ \hline
+		\end{tabulary}
+  		\end{adjustwidth}
+	\end{table}
+%  \item Interaktion: Benutzer-Benutzer und System-Benutzer
+\vspace{1ex}\noindent
+\subparagraph{Interaktion: Benutzer-Benutzer und System-Benutzer:}
+	\begin{table}[H]
+  		\begin{adjustwidth}{-1.7cm}{1.7cm}
+		\centering
+		\begin{tabulary}{18cm}{|C|M|M|}
+		%\begin{tabulary}{\columnwidth}{|C|L|L|}
+			\hline
+		  & \multicolumn{1}{c|}{online} & \multicolumn{1}{c|}{offline} \\ \hline
+synchron  & 
+				\begingroup
+    				\fontsize{9pt}{10pt}\selectfont
+\textbf{Echtzeit-Interaktion}:\newline
+%\ref{2_ISYNCONL}
+%- Benutzer können Chat-Nachrichten austauschen\newline
+%			- Benutzer können auf dem lokalen Client aktuelle Standorte anderer Benutzer sehen\newline
+%			- Benutzer können GUI-Objekte auf einem entfernten Client steuern
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
+	\item Benutzer können Kontakt-Verbindungen eingehen und diese bearbeiten
+	\item Benutzer können Chat-Nachrichten austauschen
+	\item Benutzer können auf dem lokalen Client aktuelle Standorte anderer Benutzer sehen
+	\item Benutzer können GUI-Objekte auf einem entfernten Client steuern
+\end{itemize}
+				\endgroup
+& 
+				\begingroup
+    				\fontsize{9pt}{10pt}\selectfont
+\textbf{Verzögerte Kommunikation}:\newline
+%\ref{2_ISYNCOFFL}
+%Neu erstellte Chat-Nachrichten werden lokal in einer Warteschlange gespeichert und angezeigt.
+Im Idealfall können auch alle Aktionen der Kontaktverwaltung im offline-Modus ausgeführt werden. Allerdings wird dies eventuell in VoyageX noch nicht implementiert.
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
+	\item Neu erstellte Chat-Nachrichten werden lokal in einer Warteschlange gespeichert
+\end{itemize}
+				\endgroup
+\\ \hline
+asynchron &
+				\begingroup
+    				\fontsize{9pt}{10pt}\selectfont
+\textbf{Synchronisation von Kommunikations-Daten}:\newline
+%\ref{2_IASYNCONL}
+%Beim Wechsel vom Offline- in den Online-Modus werden:\newline
+%- Nachrichten aus der lokalen Warteschlange an die Adressaten versendet\newline
+%- Nachrichten an den lokalen Benutzer aus einer Backend-Warteschlange empfangen
+Beim Wechsel vom Offline- in den Online-Modus werden die lokalen Daten mit den System-Daten synchronisiert:
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
+	\item Nachrichten aus der lokalen Warteschlange an die Adressaten versendet
+	\item Nachrichten an den lokalen Benutzer aus einer Backend-Warteschlange empfangen
+\end{itemize}
+				\endgroup
+& \multicolumn{1}{c|}{-}  \\ \hline
+		\end{tabulary}
+  		\end{adjustwidth}
+	\end{table}
+%\end{itemize}
+%Im folgenden werden also auch die Konzepte und Funktionalität dieser Komponenten vorgestellt.
 %Mitwirkende Benutzer müssen sich auf der Web-Seite registrieren um die Bearbeitungs-Funktionen nutzen zu können. Nicht
 %registrierte Benutzer können nur "`lesend"' auf die Anwendung zugreifen.\\ \\
 %\subsection{Funktionsumfang}\label{4_FU}
 %\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
 %\item \textbf{plain text}: ein plain-text eintrag besteht nur aus text. allerdings wird als default icion ein %\end{itemize}
 %\subsubsection{Darstellung der Karte und positionsbezogener Gestaltungs-Elemente}
-\subsubsection{Benutzerverwaltung}
-%Die Bearbeitung von Karten und ein öffentlicher Nachrichten-Austausch
-In einem kollaborativen Kontext müssen die Aktionen mehrer Benutzer synchronisiert werden. Für VoyageX wird daher ein Benutzer und Autorisierungs-System benötigt.\\
-Die Benutzer führen persistente Aktionen aus, deren Ergebnisse im System gespeichert werden, und von allen Benutzern wahrgenommen werden können. Jede Änderung der System-Daten soll dabei einem Benutzer zugeordnet werden können.\\ \\
-Für die Realisierung des Benutzer-Systems sind folgende Komponenten erforderlich:
-\begin{itemize}
-  \item Registrierung
-  \item Session-Verwaltung
-\end{itemize}
-Eine über Einladung gesteuerte Gruppen-Verwaltung wäre sinnvoll und kann je nach Zeitverfügbarkeit optional
-implementiert werden.
-%Es werden 2 Arten
-%email passwort oder facebook
-%andere benutzer können jeden sehen
-%gruppenverwaltung wäre sinnvoll
-%per einladung 
-
-\subsubsection{Darstellung der Karte und Bearbeitungs-Werkzeuge}
-%Zur Darstellung einer Karte müssen aus den im vorigen Abschnitt vorgestellten API-Anbietern ein Tile-Service-Provider und ein Map-Viewer gewählt werden. Damit können folgende Grundfunktionen der Karten-Navigation implementiert werden:
-In der graphischen Benutzeroberfläche wird eine Landkarte angezeigt. Diese ist interaktiv und es werden
-folgende Navigations-Funktionen für die Berarbeitung von PoI-Einträgen implementiert:
-\begin{itemize}
-  \item Ein Benutzer kann durch "`ziehen"' der Karte, oder durch Eingabe von Koordinaten, jede beliebige Kartenposition im Browser-Fenster anzeigen lassen.
-  \item Jeder Kartenausschnitt kann in mehreren Auflösungen (Zoom-Level) angezeigt werden.
-  \item Es werden graphische Elemente in der Benutzeroberfläche bereitgestellt, mit denen Punkte auf der Karte optisch gekennzeichnet werden (Markers), sowie zusätzliche Informationen (Popups) zu diesen Markierungen angezeigt werden können.
-\end{itemize}
-Zur Nutzbarmachung der Bearbeitungsfunktionen von VoyageX werden Menus sowie Werkzeug- und Steuerungs-Elemente bereitgestellt, die dem Benutzer eine schnelle Interaktion und Navigation ermöglichen.
-
-\subsubsection{Erstellen von Einträgen}
-Jeder registrierte Benutzer kann neue PoI-Einträge erstellen, indem er auf der Karte einen Punkt markiert und zu diesem über einen Eingabe-Dialog eine Beschreibung oder andere Informationen speichert (Geo-Tagging). Optional kann auch eine Multimedia-Datei an den Eintrag angehängt werden - alle Informationen sollen dann in einem Popup-Fenster über dem Marker des Eintrags angezeigt werden.\\
-Alle anderen Benutzer können diese Einträge (als Markers und Popups) sofort$^{\textbf{\ref{CMTPUMVOYGEOTAG}}}$%
-% footnote
-\addtocounter{footnote}{1}%
-\footnotetext{\label{CMTPUMVOYGEOTAG}Oder sobald sie online sind.} ebenfalls auf ihren eigenen Geräten sehen, und weitere Texte und Anhänge hinzufügen.
-%Ein Benutzer soll Informationen zu einem ausgewählten Standort speichern können. Neben einem obligatorischen Beschreibungs-Text soll auch eine Multimedia-Datei an die Beschreibung angehängt werden können\\ \\
-%Benutzer sollen auch bereits existierende, selbst- oder durch andere Benutzer verfasste Einträge kommentieren können. Auch dabei soll der Anhang einer Multimedia-Anhang erlaubt sein.
-
-\subsubsection{Interaktion (Follow)}
-Neben der Bearbeitung von PoI-Einträgen implementiert VoyageX eine Infrastruktur für die Kommunikation zwischen Benutzern. Entfernte Benutzer können mit deren Zustimmung als Kontakte gespeichert werden. Diese bestätigten Kontakte werden auf der Karte mit einem Marker angezeigt, über dessen Funktions-Menu verschiedene Interaktionen gestartet werden können.\\
-Im Rahmen der Interaktion zwischen Benutzern sind auch durch Persönlichkeits-Rechte bedingte, besondere Sicherheits-Aspekte zu berücksichtigen. Dafür soll ein Benutzer die Möglichkeit haben, entsprechende Einstellungen vorzunehmen.
-
-\paragraph{Rechteverwaltung}
-Jeder Benutzer soll selbst festlegen könne, welche entfernten Benutzer (Peers) mit ihm in Interaktion
-treten können.\\
-Die Erteilung einer entsprechenden Berechtigung kann nur über eine Anfrage an den gewünschten Interaktions-Partner, und mit seiner Zustimmung erfolgen. Wird die Interaktions-Berechtigung erteilt, kann sie pauschal für alle Aktionen gelten - eine gegliederte Rechteverwaltung kann optional für den Fall ausreichender zeiticher Resourcen implementiert werden.
-
-\paragraph{Benachrichtigungen}
-Alle online-Benutzer erhalten unmittelbar Benachrichtigungen zu neuen Einträgen oder Kommentaren, außerdem werden diese auch sofort in der eigenen lokalen Ansicht jedes Benutzers angezeigt.\\ \\
-Sofern ein Benutzer die Location-Sharing-Funktion seines Browsers, und im Falle mobiler Endgeräte zusätzlich GPS aktiviert hat, kann er es entfernten Benutzern erlauben, Benachrichtigungen über seine eigenen Standort-Änderungen zu erhalten. Diese Funktion muss in der Anwendung explizit aktiviert bzw. deaktiviert werden.
-
-\paragraph{Kommunikation}
-Benutzer haben die Möglichkeit, über Instant Messaging miteinander zu kommunizieren. Dabei sind
-folgende Chat-Typen implemetiert:
-\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
-\item \textbf{P2P-Chat}: Die ausgetauschten Nachrichten sind nur für 2 Kommunikationspartner sichtbar.
-\item \textbf{Konferenz-Chat}: Mehrere Kommunikationspartner können sich am Chat beteiligen.
-\end{itemize}
-Die Nachrichten werden begrenzt gespeichert, d.h. daß ein Benutzer beim Wiederöffnen eines  geschlossenen Chat-Fensters oder nach dem Neustart der Anwendung einen begrenzten Teil Nachrichten-Historie sehen kann.
-Private Nachrichten werden nur von den beiden Kommunikationspartnern jeweils lokal gespeichert. Konferenz-Nachrichten werden zusätzlich im Backend gespeichert, und können so auch nach einem Wechsel auf ein anderes Endgerät angezeigt werden.
-
-\paragraph{Kontrolle entfernter Darstellungs-Elemente}
-Jedem Peer ist auf der (lokalen) Karte eines Benutzers ein Marker zugeordnet. 
-Eine weitere Form der Interaktion soll nun durch die entfernte Kontrolle eines solchen Markers durch den Peer implementiert werden. Dabei kann der Peer die Position des ihm zugeordneten Markers auf der entfernten Karte steuern. Die Positions-Änderungen des Markers werden dann durch die Darstellung von Verbindungslinien in Form eines Pfades "`aufgezeichnet"'. Auf diese Weise kann sich ein User von einem Peer beispielsweise navigatiorische Hilfestellung geben lassen.
-
-\subsubsection{Funktionsumfang im Offline-Betrieb}
-Folgende Dateien und Objekte müssen für die Funktionsfähigkeit der Anwendung im Offline-Betrieb vom Client eines Benutzers lokal gespeichert werden:
-\begin{itemize}
-  \item Karten-Kachel-Bilder
-  \item PoI Einträge und Kommentare
-  \item Konferenz- und P2P-Chat Nachrichten
-  \item Peer-Daten
-\end{itemize}
-Allerdings können nicht alle Kachel-Bilder der Weltkarte in allen Auflösungen lokal gespeichert werden.
-Das selbe gilt in Bezug auf die kompletten System-Daten. 
-
-\paragraph{Kartenkacheln}
-Zur Anzeige von Karten werden einzelne Karten-Kacheln in verschiedenen Maßstäben von einem \texttt{Tile-Service} aus dem Internet geladen, und anschliessend zur Kartenansicht zusammengefügt.\\
-%Nachdem aber die Internet-Verbindung nicht immer garantiert ist muß eine Möglichkeit gefunden werden, die benötigten Bild-Dateien auch im Offline-Betrieb in die Kartenanzeige zu integrieren. Dabei sind Lösungen zu finden, 
-Für eine Netzwerk-Verbindungs-unabhängige Karten-Darstellung werden folgende Probleme von VoyageX entschieden: 
-	\begin{itemize}
-		\item welche Bild-Dateien vorab geladen und gespeichert werden% sollen
-		%: Dafür muß ein Algorithmus gefunden und implementiert werden, der die vom Benutzer für die Bearbeitung benötigten Karten-Ausschnitte vorhersagt.
-		\item wie diese Bild-Dateien lokal gespeichert werden% sollen
-		\item wie diese Bild-Dateien dann vom Karten-Viewer eingebunden werden% können
-	\end{itemize}
-Eine manuelle Auswahl zu speichernder Kartenbereichs-Bild-Dateien kann indirekt über die im nachfolgenden Abschnitt beschriebene Bookmark-Funktion durchgeführt werden.
-
-\paragraph{POI-Einträge}
-Alle POI-Einträge werden im Backend$^{\textbf{\ref{CMTBEREF1}}}$%
-% footnote
-\addtocounter{footnote}{1}%
-\footnotetext{\label{CMTBEREF1}Das Backend wird in Abschnitt \ref{5_BE} ausführlich beschreiben.} gespeichert - lokal können aber je nach Speicher-Kapazität nur eine begrenzte Anzahl von Einträgen gespeichert werden.\\ PoI-Einträge beziehen sich immer auf bestimmte Karten-Positionen, also gilt bei der Entscheidung über die Auswahl der lokal zu speichernden Einträgen das gleiche wie für Karten-Kacheln.
-Allerdings wird bei Einträgen ein zusätzliches Relevanz-Kriterium eingeführt: vom Benutzer explizit markierte Einträge (Bookmarks) sind jederzeit verfügbar, d.h. daß nicht nur die Bookmark-Information sondern auch der referenzierte Kartenbereich lokal persistent gehalten wird.\\
-%werden immer dann mit den system-daten synschronisiert wenn der benutzer online ist.\\
-Bookmarks werden nur lokal gespeichert.
-
-\paragraph{Nachrichten}
-Anders als PoI-Einträgen existiert für Chat-Nachrichten kein Karten-Kontext, und folglich besteht auch keine Notwendigkeit Karten-Kachel-Bilder dafür zu laden. Aus diesem Grund werden
-Chat-Nachrichten mit einem einfachen Cache-Algorithmus, nämlich einer FIFO-History-Queue, verwaltet.
-
-\paragraph{Peer-Daten}
-Peer-Daten sind Teil der Information von PoI-Einträgen und Chat-Nachrichten, deshalb werden sie für deren vollständige Anzeige benötigt. Peer-Daten werden sowohl im Backend als auch lokal gespeichert.
-
-\subsubsection{Synchronisation}
-Nachdem nun ein Benutzer für einen bestimmten Zeitraum offline war, kann eine Synchronisation
-der lokalen Daten mit den System-Daten in folgenden Fällen erforderlich werden:
-	\begin{itemize}
-		\item der Benutzer hat selbst zwischenzeitlich neue Einträge erstellt, geändert oder gelöscht
-		\item andere Benutzer haben zwischenzeitlich neue Einträge erstellt, geändert oder gelöscht
-	\end{itemize}
-Sobald der Benutzer nach einer Netzwerk-Verbindungs-Unterbrechung wieder online ist, muß sein Client mit dem Backend einen Daten-Abgleich durchführen. Falls der Benutzer Daten geändert hat muß das Backend alle anderen online-Clients über die Änderungen informieren, damit die Clients wiederum ihr eigenes lokales Cache synchronisieren können.
-
-
+\vspace{2ex}
+\enlargethispage{3\baselineskip} % allow 3 more lines on current page
+\noindent
+Eine Entkopplung von der Netzwerk-Verbindungs-Abhängigkeit muß also durch die Möglichkeit zum lokalen Speichern von Anwendungs-Daten, als auch durch das Vorhalten der für die Nutzung der Software benötigten System-Daten bewerkstelligt werden. Allerdings können aus Gründen der Wartbarkeit und der begrenzten Speicher-Kapazität nicht alle System-Daten auf einem Endgerät gespeichert werden. Es ist daher erforderlich, eine Auswahl bezüglich der vom Benutzer benötigten Daten zu treffen und diese vorzuhalten - im Falle einer kartenbasierten Anwendung müssen dafür beispielsweise die Bild-Dateien für die darzustellenden Karten-Abschnitte vorgeladen werden. Die Vorlade-Auswahl kann mit Hife von aufgabenspezifischen Vorhersage-Algorithmen getroffen werden. Im gegebenen geographischen Kontext können die Vorhersage-Strategien beispielsweise auf Bewegungs-Routen basieren. 
 
 
 \newpage
@@ -315,6 +384,32 @@ Nach einem Überblick über Grundlagen und Entwicklung ortsbezogener Anwendungen
 % Grundlagen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Grundlagen ortsbezogener Anwendungen}\label{3_GRUNDL}
+Seit der Entwicklung des ersten personalisierten Lokalisierungssystems$^{\textbf{\ref{ATTACTBADG}}}$%
+% footnote
+\addtocounter{footnote}{1}%
+\footnotetext{\label{ATTACTBADG}\href{http://www.cl.cam.ac.uk/research/dtg/attarchive/ab.html}{Active Badge System - http://www.cl.cam.ac.uk/research/dtg/attarchive/ab.html}; letzter Zugriff: 23.04.2015}
+anfangs der 1990er haben Verbreitung und Reichweite von Endgeräten mit der Fähigkeit zur Positions-Bestimmung eine nahezu ubiquitäre Dimension erreicht. Fast jeder Mensch kann nun seine aktuellen geographischen Standort beliebig vielen andern Menschen mitteilen, und Objekte oder sogar Personen anhand ihre Positions-Daten identifizieren. \\ \\
+Seit Mitte 2000 ist vor diesem Hintergrund eine Vielzahl von Anwendungen mit einer Einbindung "`standortbezogener Dienste"' entwickelt worden. Die Möglichkeit einer Anzeige von Informationen zu Markierungs-Punkten auf einer Karte kann in vielerlei Hinsicht genutzt werden, unter anderem für:
+\begin{itemize}
+  \item Geo-Tagging von Orten oder Objekten
+  \item zeitbezogene Lokalisierung von Personen oder Ereignissen
+\end{itemize}
+\vspace{1ex}
+Für Orte bzw. Objekte (Points of Interest) oder Ereignisse (Events of Interest) können die angezeigten Informationen neben einer objektiven Beschreibung auch subjektive Bewertungen oder Empfehlungen beinhalten, für Personen (People of Interest) kann die Möglichkeit zur direkten Kontaktaufnahme über einen Chat-Dialog verknüpft werden.\\ \\
+Viele der aktuellen mobilen Anwendungen nutzen eigene Backends und freie Web-Services von Dritten als Geo-Informations-Quellen. Diese Clients werden vorwiegend als native Anwendungen über den App-Store$^{\textbf{\ref{CMTAPPST}}}$%
+% footnote
+\addtocounter{footnote}{1}%
+\footnotetext{\label{CMTAPPST}\href{http://de.wikipedia.org/wiki/App\_Store\_\%28iOS\%29}{App-Store - http://de.wikipedia.org/wiki/App\_Store\_\%28iOS\%29}; letzter Zugriff: 23.04.2015} für iOS$^{\textbf{\ref{CMTIOS}}}$%
+% footnote
+\addtocounter{footnote}{1}%
+\footnotetext{\label{CMTIOS}\href{http://de.wikipedia.org/wiki/Liste\_von\_iOS-Ger\%C3\%A4ten}{iOS - http://de.wikipedia.org/wiki/Liste\_von\_iOS-Ger\%C3\%A4ten}; letzter Zugriff: 23.04.2015} oder Google-Play$^{\textbf{\ref{CMTGOOPL}}}$%
+% footnote
+\addtocounter{footnote}{1}%
+\footnotetext{\label{CMTGOOPL}\href{http://de.wikipedia.org/wiki/Google\_Play}{Google-Play - http://de.wikipedia.org/wiki/Google\_Play}; letzter Zugriff: 23.04.2015} für Android$^{\textbf{\ref{CMTANDROID}}}$%
+% footnote
+\addtocounter{footnote}{1}%
+\footnotetext{\label{CMTANDROID}\href{http://de.wikipedia.org/wiki/Android\_\%28Betriebssystem\%29}{Android - http://de.wikipedia.org/wiki/Android\_\%28Betriebssystem\%29}; letzter Zugriff: 23.04.2015} angeboten.%\\
+%Bearbeitung von Karteneinträgen im Offline-Modus wird nicht angeboten.
 
 \subsubsection{Geo-Informations-Systeme und Kartendienste}
 Ein Geo-Informations-System (GIS) ist ein System zur Erfassung, Speicherung,  Bearbeitung, Analyse, Organisation und Präsentation für jede Art von räumlicher oder geographischer Information.\cite{GIS:WIKIDEF} \\
@@ -700,9 +795,219 @@ Die Entwicklung von VoyageX verfolgt als Ziel die Entwicklung eines Prototyps f�
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mobile Apps und Web Applications
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mobile Apps und Web Applications}\label{4_MAWA}
+Eine mobile Anwendung (App) ist eine speziell für eine bestimmte Plattform entwickelte Software, welche
+alle Features der Plattform in vollem Umfang nutzen kann. Im Allgemeinen kann ein derartiges "`natives"' Programm nicht auf einer anderen Plattform genutzt werden.\\ \\
+Web-Anwendungen (Web-Apps) sind geschichtete Programme (z.b. Client-Server Architektur), die aus Anwendungs-Sicht beim Benutzer lokal innerhalb einer Plattform-unabhängigen Laufzeitumgebung - einem Web-Browser - ausgeführt werden, wobei die Web-Browser-Software nativ für jede Plattform entwickelt werden muß.\\
+Ein wesentlicher Vorteil gegenüber einer nativen App ist der geringere Entwicklungsaufwand, da im Idealfall eine enizige Anwendung entwickelt werden muss, die dann auf jedem Betriebs-System läuft. Es gibt aber Faktoren, welche die Möglichkeit zur Entwicklung einer Anwendung als Web-App einschränken:
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
+\item eine eingeschränkte Unterstützung spezieller Plattform-Features
+\item die durch das Look and Feel wahrgenommene User-Experience
+\item Abhängigkeit von der Leistungsfähigkeit der Internetverbindung, allerdings gibt es hier die Möglichkeit die Anwendungslogik nach dem erstmaligen laden auf dem Client zu speichern und die Anwendung sogar im Offline-Modus zu nutzen.
+\end{itemize}
+Mit der Entwicklung und Verabschiedung des \texttt{Html5}-Standards haben Web-Anwendungen eine Vielzahl von Möglichkeiten gewonnen, plattform-abhängige Features - insbesondere einen umfangreicheren Zugriff auf Hardware-Komponenten - zu nutzen. Ebenso sind viele Bedienungselemente nativer Anwendungen, wie z.B. Drag and Drop, mittlerweile auch für Web-Apps einfach zu realisieren.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Single Page Interface
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Single Page Interface}\label{5_SPI}
+% \noindent TODO: http://itsnat.sourceforge.net/php/spim/spi\_manifesto\_en.php
+
+VoyageX ist als Single Page Interface-Application (SPI oder SPA) implementiert. Mit diesem Anwendungs-Modell werden folgende Ziele verfolgt:
+
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
+\item \textbf{User-Experience}: Die Implementierung als SPI ist vor allem für Webseiten mit ausgeprägtem Anwendungs-Charakter$^{\textbf{\ref{COMMENT_SPI_1}}}$ sinnvoll und bietet das für einen Benutzer vertraute Look-and-Feel einer Desktop-Anwendung.%
+% footnotes
+\addtocounter{footnote}{1}
+\footnotetext{\label{COMMENT_SPI_1}Für Webseiten mit reinem Informations-Charakter, also für Eingabe und Darstellung rein textueller Daten, ist die über Urls definierte Status-Verwaltung des klassische Modells einfacher zu implementieren. Allerdings lassen sich mit der Integration von Rich-Client-Konzepten wie Ajax auch klassische Webseiten optimieren.}
+\item \textbf{Performance}: Der Performancegewinn wird vor allem durch die Reduktion der Netzwerklast erreicht - Views werden bei einem SPI nicht am Server, sondern im Client aus Templates generiert, welche beim Anwendungsstart einmalig geladen werden. Der folgende Netzwerkverkehr wird also nicht mehr durch redundante View-Informationen aufgebläht, sondern beinhaltet nur noch die Daten-Synchronisation mit einem Backend. Die höhere Rechenlast am Client-Endgerät wird zusätzlich durch den von Renderings-Aufgaben entlasteten schnelleren Server ausgeglichen.
+\end{itemize}
+
+
+
+
+\noindent
+Die Verlagerung der View-Logik zum Client wirft allerdings auch neue Probleme auf.\\
+So kann der Status der Anwendung nicht auf herkömmliche Art und Weise über ein Url-Lesezeichen referenziert werden, sondern muss Anwendungsintern verwaltet werden. Einzelne Anwendungs-Komponenten werden über Fragment-Identifier mit dem Anchor-Hash referenziert, insgesamt besteht eine SPI-App in diesem Zusammenhang aber aus beliebig komplexen Zuständen statt Seiten \cite{SPI:MF}.\\
+Weitere Lösungen müssen für die Umsetzung von Search Engine Optimisations (SEO) gefunden werden. Dies ist für VoxageX im Rahmen dieser Arbeit zwar keine Anforderung - aber eine Suchmaschinen-Indizierung von PoI-Einträgen wäre sicher ein nützliches Feature.\\ \\
+Für die Realisierung der Anforderung nach Funktionsfähigkeit des Clients im Offline-Modus wird ein weiteres SPI-Konzept übernommen: Alle Ansichten (Views) der Anwendung werden im Client mit Javascript-Logik aus Roh-Daten und Html-Templates zusammengefügt, wobei letztere allesamt beim ersten Aufruf der Seite in den Browser geladen werden. Auf diese Weise können neue PoI-Einträge auch im Offline-Modus erstellt und dargestellt werden.\\
+%Die weitere Kommunikation mit dem (Backend-)Server dient nur noch der Synchronisation der Daten und der Kommunikation mit anderen Clients.
+% Diese Architektur ermöglicht es einem Benutzer jederzeit einen beliebigen Anwendungszustand auf einem verschiedenen Endgerät zu initialisieren.
+Es gibt verschiedene JS-Frameworks welche die Entwicklung einer SPI-Anwendung unterstützen (AngularJS$^{\textbf{\ref{WIKIANGULAR}}}$%
+% footnote
+\addtocounter{footnote}{1}%
+\footnotetext{\label{WIKIANGULAR}\href{http://de.wikipedia.org/wiki/AngularJS}{AngularJS - http://de.wikipedia.org/wiki/AngularJS}; letzter Zugriff: 01.03.2015}
+,  Ember.js$^{\textbf{\ref{WIKIEMBER}}}$%
+% footnote
+\addtocounter{footnote}{1}%
+\footnotetext{\label{WIKIEMBER}\href{http://de.wikipedia.org/wiki/Ember.js}{Ember.js - http://de.wikipedia.org/wiki/Ember.js}; letzter Zugriff: 01.03.2015}
+, Meteor$^{\textbf{\ref{WIKIMETEOR}}}$%
+% footnote
+\addtocounter{footnote}{1}%
+\footnotetext{\label{WIKIMETEOR}\href{http://en.wikipedia.org/wiki/Meteor\_(web\_framework)}{Meteor - http://en.wikipedia.org/wiki/Meteor\_(web\_framework)}; letzter Zugriff: 01.03.2015}
+). Allerdings beinhalten diese auch viele Lösungen, die für VoyageX nicht benötigt werden. Besipielsweise ist eine Data-Binding$^{\textbf{\ref{CMTDATABIN}}}$%
+% footnote
+\addtocounter{footnote}{1}%
+\footnotetext{\label{CMTDATABIN}\href{http://en.wikipedia.org/wiki/Data\_binding}{Data Binding - http://en.wikipedia.org/wiki/Data\_binding}; letzter Zugriff: 01.03.2015} Lösung dafür gedacht, entfernte Objekte in die View zu integrieren. Bei VoyageX wird in der View aber nur mit lokalen Objekten gearbeitet die dann über eine Batch-Synchronisation mit den Systemdaten zusammengeführt werden.\\
+	
+%	\begin{table}[H]
+%		\centering
+%		\begin{tabulary}{\columnwidth}{C >{\centering}m{1cm} C}
+%			\includegraphics[scale=0.4]{bilder/spi_history_1.png} & & \includegraphics[scale=0.4]{bilder/spi_history_2.png} \\
+%			\multicolumn{3}{c}{\includegraphics[scale=0.4]{bilder/zk-ng-architecture.png}}
+%		\end{tabulary}
+%	\end{table}
+  \begin{figure}[H]
+      \centering
+	  \includegraphics[scale=0.48]{bilder/spi.png}\\ 
+  	  \caption{Viewmodel und SPI}
+  \end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% System-Architektur
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{System-Architektur}\label{5_SA}
+Die System-Architektur von VoyageX basiert auf dem Client-Server-Modell. Die Darstellungs-Schicht wird am Client implementiert, während die Persistenz-Schicht und die Kommunikations-Schicht auf Client und Server verteilt werden.\\ \\
+Die Verteilung der Persistenz-Schicht ist durch die geforderte Offline-Funktionalität bedingt, sie wird über Replikation und Synchronisation eines Ausschnitts der Systemdaten organisiert. In den Abschnitten \ref{DBMS} und \ref{5_DSE} werden die Persistenz-Modelle von Server und Client ausführlicher beschrieben, als Datenaustausch-Format wird JSON genutzt. Die Aufgaben einer serverseitigen Daten-API werden von einer Webanwendung übernommen welche in dieser Hinsicht eher mit der API eines WebServices verglichen werden kann.
+Eine weitere Aufgabe der Webanwendung ist die Benutzer-Authentisierung.\\ \\
+Die Verteilung der Kommunikationsschicht ist unbedingt, für VoyageX wird sie mit der Publish-Subscribe-Lösung von Faye implementiert. Die Client-Server Komponenten von Faye werden sowohl im Frontend als auch im Backend hinter VoyageX-fähigen Schnittstellen gekapselt, so daß ein späterer Austausch der Kommunikations-Schicht möglich wird, ohne dafür weitere Anwendungs-Teile ändern zu müssen. Die einzelnen Module werden in \ref{5_MESSGNG} vorgestellt.\\
+  \begin{figure}[H]
+      \centering
+	  \includegraphics[scale=0.5]{bilder/system_architecture.png}
+  	  \caption{Verteilung der System-Komponenten}
+  \end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basis-Funktionen für den testbaren Prototyp
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Basis-Funktionen für den testbaren Prototyp}\label{4_BASEFUNC}
+
+\subsubsection{Benutzerverwaltung}
+%Die Bearbeitung von Karten und ein öffentlicher Nachrichten-Austausch
+In einem kollaborativen Kontext müssen die Aktionen mehrer Benutzer synchronisiert werden. Für VoyageX wird daher ein Benutzer und Autorisierungs-System benötigt.\\
+Die Benutzer führen persistente Aktionen aus, deren Ergebnisse im System gespeichert werden, und von allen Benutzern wahrgenommen werden können. Jede Änderung der System-Daten soll dabei einem Benutzer zugeordnet werden können.\\ \\
+Für die Realisierung des Benutzer-Systems sind folgende Komponenten erforderlich:
+\begin{itemize}
+  \item Registrierung
+  \item Session-Verwaltung
+\end{itemize}
+Eine über Einladung gesteuerte Gruppen-Verwaltung wäre sinnvoll und kann je nach Zeitverfügbarkeit optional
+implementiert werden.
+%Es werden 2 Arten
+%email passwort oder facebook
+%andere benutzer können jeden sehen
+%gruppenverwaltung wäre sinnvoll
+%per einladung 
+
+\subsubsection{Darstellung der Karte und Bearbeitungs-Werkzeuge}
+%Zur Darstellung einer Karte müssen aus den im vorigen Abschnitt vorgestellten API-Anbietern ein Tile-Service-Provider und ein Map-Viewer gewählt werden. Damit können folgende Grundfunktionen der Karten-Navigation implementiert werden:
+In der graphischen Benutzeroberfläche wird eine Landkarte angezeigt. Diese ist interaktiv und es werden
+folgende Navigations-Funktionen für die Berarbeitung von PoI-Einträgen implementiert:
+\begin{itemize}
+  \item Ein Benutzer kann durch "`ziehen"' der Karte, oder durch Eingabe von Koordinaten, jede beliebige Kartenposition im Browser-Fenster anzeigen lassen.
+  \item Jeder Kartenausschnitt kann in mehreren Auflösungen (Zoom-Level) angezeigt werden.
+  \item Es werden graphische Elemente in der Benutzeroberfläche bereitgestellt, mit denen Punkte auf der Karte optisch gekennzeichnet werden (Markers), sowie zusätzliche Informationen (Popups) zu diesen Markierungen angezeigt werden können.
+\end{itemize}
+Zur Nutzbarmachung der Bearbeitungsfunktionen von VoyageX werden Menus sowie Werkzeug- und Steuerungs-Elemente bereitgestellt, die dem Benutzer eine schnelle Interaktion und Navigation ermöglichen.
+
+\subsubsection{Erstellen von Einträgen}
+Jeder registrierte Benutzer kann neue PoI-Einträge erstellen, indem er auf der Karte einen Punkt markiert und zu diesem über einen Eingabe-Dialog eine Beschreibung oder andere Informationen speichert (Geo-Tagging). Optional kann auch eine Multimedia-Datei an den Eintrag angehängt werden - alle Informationen sollen dann in einem Popup-Fenster über dem Marker des Eintrags angezeigt werden.\\
+Alle anderen Benutzer können diese Einträge (als Markers und Popups) sofort$^{\textbf{\ref{CMTFUNCERSEINT}}}$%
+% footnote
+\addtocounter{footnote}{1}%
+\footnotetext{\label{CMTFUNCERSEINT}Oder sobald sie online sind.} ebenfalls auf ihren eigenen Geräten sehen, und weitere Texte und Anhänge hinzufügen.
+%Ein Benutzer soll Informationen zu einem ausgewählten Standort speichern können. Neben einem obligatorischen Beschreibungs-Text soll auch eine Multimedia-Datei an die Beschreibung angehängt werden können\\ \\
+%Benutzer sollen auch bereits existierende, selbst- oder durch andere Benutzer verfasste Einträge kommentieren können. Auch dabei soll der Anhang einer Multimedia-Anhang erlaubt sein.
+
+
+\subsection{Interaktion}
+VoyageX implementiert eine Infrastruktur für die Kommunikation zwischen Benutzern. Entfernte Benutzer können mit deren Zustimmung als Kontakte gespeichert werden. Diese bestätigten Kontakte werden auf der Karte mit einem Marker angezeigt, über dessen Funktions-Menu verschiedene Interaktionen gestartet werden können.\\
+Im Rahmen der Interaktion zwischen Benutzern sind auch durch Persönlichkeits-Rechte bedingte, besondere Sicherheits-Aspekte zu berücksichtigen. Dafür soll ein Benutzer die Möglichkeit haben, entsprechende Einstellungen vorzunehmen.
+
+\paragraph{Follow-Rechteverwaltung}
+Jeder Benutzer soll selbst festlegen könne, welche entfernten Benutzer (Peers) mit ihm in Interaktion
+treten können.\\
+Die Erteilung einer entsprechenden Berechtigung kann nur über eine Anfrage an den gewünschten Interaktions-Partner, und mit seiner Zustimmung erfolgen. Wird die Interaktions-Berechtigung erteilt, kann sie pauschal für alle Aktionen gelten - eine gegliederte Rechteverwaltung kann optional für den Fall ausreichender zeiticher Resourcen implementiert werden.
+
+\paragraph{Benachrichtigungen}
+Alle online-Benutzer erhalten unmittelbar Benachrichtigungen zu neuen Einträgen oder Kommentaren, außerdem werden diese auch sofort in der eigenen lokalen Ansicht jedes Benutzers angezeigt.\\ \\
+Sofern ein Benutzer die Location-Sharing-Funktion seines Browsers, und im Falle mobiler Endgeräte zusätzlich GPS aktiviert hat, kann er es entfernten Benutzern erlauben, Benachrichtigungen über seine eigenen Standort-Änderungen zu erhalten. Diese Funktion muss in der Anwendung explizit aktiviert bzw. deaktiviert werden.
+
+\paragraph{Kommunikation}
+Benutzer haben die Möglichkeit, über Instant Messaging miteinander zu kommunizieren. Dabei sind
+folgende Chat-Typen implemetiert:
+\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
+\item \textbf{P2P-Chat}: Die ausgetauschten Nachrichten sind nur für 2 Kommunikationspartner sichtbar.
+\item \textbf{Konferenz-Chat}: Mehrere Kommunikationspartner können sich am Chat beteiligen.
+\end{itemize}
+Die Nachrichten werden begrenzt gespeichert, d.h. daß ein Benutzer beim Wiederöffnen eines  geschlossenen Chat-Fensters oder nach dem Neustart der Anwendung einen begrenzten Teil Nachrichten-Historie sehen kann.
+Private Nachrichten werden nur von den beiden Kommunikationspartnern jeweils lokal gespeichert. Konferenz-Nachrichten werden zusätzlich im Backend gespeichert, und können so auch nach einem Wechsel auf ein anderes Endgerät angezeigt werden.
+
+\paragraph{Kontrolle entfernter Darstellungs-Elemente}
+Jedem Peer ist auf der (lokalen) Karte eines Benutzers ein Marker zugeordnet. 
+Eine weitere Form der Interaktion soll nun durch die entfernte Kontrolle eines solchen Markers durch den Peer implementiert werden. Dabei kann der Peer die Position des ihm zugeordneten Markers auf der entfernten Karte steuern. Die Positions-Änderungen des Markers werden dann durch die Darstellung von Verbindungslinien in Form eines Pfades "`aufgezeichnet"'. Auf diese Weise kann sich ein User von einem Peer beispielsweise navigatiorische Hilfestellung geben lassen.
+
+\subsection{Funktionsumfang im Offline-Betrieb}
+Folgende Dateien und Objekte müssen für die Funktionsfähigkeit der Anwendung im Offline-Betrieb vom Client eines Benutzers lokal gespeichert werden:
+\begin{itemize}
+  \item Karten-Kachel-Bilder
+  \item PoI Einträge und Kommentare
+  \item Konferenz- und P2P-Chat Nachrichten
+  \item Peer-Daten
+\end{itemize}
+Allerdings können nicht alle Kachel-Bilder der Weltkarte in allen Auflösungen lokal gespeichert werden.
+Das selbe gilt in Bezug auf die kompletten System-Daten. 
+
+\paragraph{Kartenkacheln}
+Zur Anzeige von Karten werden einzelne Karten-Kacheln in verschiedenen Maßstäben von einem \texttt{Tile-Service} aus dem Internet geladen, und anschliessend zur Kartenansicht zusammengefügt.\\
+%Nachdem aber die Internet-Verbindung nicht immer garantiert ist muß eine Möglichkeit gefunden werden, die benötigten Bild-Dateien auch im Offline-Betrieb in die Kartenanzeige zu integrieren. Dabei sind Lösungen zu finden, 
+Für eine Netzwerk-Verbindungs-unabhängige Karten-Darstellung werden folgende Probleme von VoyageX entschieden: 
+	\begin{itemize}
+		\item welche Bild-Dateien vorab geladen und gespeichert werden% sollen
+		%: Dafür muß ein Algorithmus gefunden und implementiert werden, der die vom Benutzer für die Bearbeitung benötigten Karten-Ausschnitte vorhersagt.
+		\item wie diese Bild-Dateien lokal gespeichert werden% sollen
+		\item wie diese Bild-Dateien dann vom Karten-Viewer eingebunden werden% können
+	\end{itemize}
+Eine manuelle Auswahl zu speichernder Kartenbereichs-Bild-Dateien kann indirekt über die im nachfolgenden Abschnitt beschriebene Bookmark-Funktion durchgeführt werden.
+
+\paragraph{POI-Einträge}
+Alle POI-Einträge werden im Backend$^{\textbf{\ref{CMTBEREF1}}}$%
+% footnote
+\addtocounter{footnote}{1}%
+\footnotetext{\label{CMTBEREF1}Das Backend wird in Abschnitt \ref{5_BE} ausführlich beschreiben.} gespeichert - lokal können aber je nach Speicher-Kapazität nur eine begrenzte Anzahl von Einträgen gespeichert werden.\\ PoI-Einträge beziehen sich immer auf bestimmte Karten-Positionen, also gilt bei der Entscheidung über die Auswahl der lokal zu speichernden Einträgen das gleiche wie für Karten-Kacheln.
+Allerdings wird bei Einträgen ein zusätzliches Relevanz-Kriterium eingeführt: vom Benutzer explizit markierte Einträge (Bookmarks) sind jederzeit verfügbar, d.h. daß nicht nur die Bookmark-Information sondern auch der referenzierte Kartenbereich lokal persistent gehalten wird.\\
+%werden immer dann mit den system-daten synschronisiert wenn der benutzer online ist.\\
+Bookmarks werden nur lokal gespeichert.
+
+\paragraph{Nachrichten}
+Anders als PoI-Einträgen existiert für Chat-Nachrichten kein Karten-Kontext, und folglich besteht auch keine Notwendigkeit Karten-Kachel-Bilder dafür zu laden. Aus diesem Grund werden
+Chat-Nachrichten mit einem einfachen Cache-Algorithmus, nämlich einer FIFO-History-Queue, verwaltet.
+
+\paragraph{Peer-Daten}
+Peer-Daten sind Teil der Information von PoI-Einträgen und Chat-Nachrichten, deshalb werden sie für deren vollständige Anzeige benötigt. Peer-Daten werden sowohl im Backend als auch lokal gespeichert.
+
+\subsubsection{Synchronisation}
+Nachdem nun ein Benutzer für einen bestimmten Zeitraum offline war, kann eine Synchronisation
+der lokalen Daten mit den System-Daten in folgenden Fällen erforderlich werden:
+	\begin{itemize}
+		\item der Benutzer hat selbst zwischenzeitlich neue Einträge erstellt, geändert oder gelöscht
+		\item andere Benutzer haben zwischenzeitlich neue Einträge erstellt, geändert oder gelöscht
+	\end{itemize}
+Sobald der Benutzer nach einer Netzwerk-Verbindungs-Unterbrechung wieder online ist, muß sein Client mit dem Backend einen Daten-Abgleich durchführen. Falls der Benutzer Daten geändert hat muß das Backend alle anderen online-Clients über die Änderungen informieren, damit die Clients wiederum ihr eigenes lokales Cache synchronisieren können.
+
+%Im Rahmen dieser Arbeit soll ein Prototyp einer Web-Awendung für kooperatives Geo-Tagging entwickelt werden. In Abschnitt \ref{2_VOYAGEX} folgt eine Beschreibung der gewünschten Funktionen. 
+Es müssen in diesem Rahmen aber sowohl weitere Anwendungskomponenten (z.B. ein Benutzersystem) als auch Konzepte zur Benutzerführung (z.B. die Gestaltung von Arbeits-Menus) durch alle benötigten Funktionen entwickelt werden, um die fertige Anwendung testen zu können. Diese werden in Abschnitt \ref{4_BASEFUNC} beschrieben.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Anwendungsfälle für VoyageX
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Anwendungsfälle für VoyageX}\label{4_UC}
+In Abschnitt \ref{2_VOYAGEX} wurden Funktionen beschrieben, die für die Annwendung entwickelt werden sollen.
+Wie bereits erwähnt werden aber noch weitere Funktionen benötigt um einen testbaren Anwendungs-Prototypen zu erstellen. 
 
 %\subsubsection{Actors}
 %%\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
@@ -800,93 +1105,6 @@ Das Backend übernimmt Benutzer-Verwaltungs und Synchronisations-Aufgaben. Für 
 			Benachrichtigung an Benutzer über Erlaubnis zur Wahrnehmung eines anderen Benutzers & y & n & y & y & \#  \\ \hline
 		\end{tabulary}
 	\end{table}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Mobile Apps und Web Applications
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Mobile Apps und Web Applications}\label{4_MAWA}
-Eine mobile Anwendung (App) ist eine speziell für eine bestimmte Plattform entwickelte Software, welche
-alle Features der Plattform in vollem Umfang nutzen kann. Im Allgemeinen kann ein derartiges "`natives"' Programm nicht auf einer anderen Plattform genutzt werden.\\ \\
-Web-Anwendungen (Web-Apps) sind geschichtete Programme (z.b. Client-Server Architektur), die aus Anwendungs-Sicht beim Benutzer lokal innerhalb einer Plattform-unabhängigen Laufzeitumgebung - einem Web-Browser - ausgeführt werden, wobei die Web-Browser-Software nativ für jede Plattform entwickelt werden muß.\\
-Ein wesentlicher Vorteil gegenüber einer nativen App ist der geringere Entwicklungsaufwand, da im Idealfall eine enizige Anwendung entwickelt werden muss, die dann auf jedem Betriebs-System läuft. Es gibt aber Faktoren, welche die Möglichkeit zur Entwicklung einer Anwendung als Web-App einschränken:
-\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
-\item eine eingeschränkte Unterstützung spezieller Plattform-Features
-\item die durch das Look and Feel wahrgenommene User-Experience
-\item Abhängigkeit von der Leistungsfähigkeit der Internetverbindung, allerdings gibt es hier die Möglichkeit die Anwendungslogik nach dem erstmaligen laden auf dem Client zu speichern und die Anwendung sogar im Offline-Modus zu nutzen.
-\end{itemize}
-Mit der Entwicklung und Verabschiedung des \texttt{Html5}-Standards haben Web-Anwendungen eine Vielzahl von Möglichkeiten gewonnen, plattform-abhängige Features - insbesondere einen umfangreicheren Zugriff auf Hardware-Komponenten - zu nutzen. Ebenso sind viele Bedienungselemente nativer Anwendungen, wie z.B. Drag and Drop, mittlerweile auch für Web-Apps einfach zu realisieren.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Single Page Interface
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Single Page Interface}\label{5_SPI}
-% \noindent TODO: http://itsnat.sourceforge.net/php/spim/spi\_manifesto\_en.php
-
-VoyageX ist als Single Page Interface-Application (SPI oder SPA) implementiert. Mit diesem Anwendungs-Modell werden folgende Ziele verfolgt:
-
-\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
-\item \textbf{User-Experience}: Die Implementierung als SPI ist vor allem für Webseiten mit ausgeprägtem Anwendungs-Charakter$^{\textbf{\ref{COMMENT_SPI_1}}}$ sinnvoll und bietet das für einen Benutzer vertraute Look-and-Feel einer Desktop-Anwendung.%
-% footnotes
-\addtocounter{footnote}{1}
-\footnotetext{\label{COMMENT_SPI_1}Für Webseiten mit reinem Informations-Charakter, also für Eingabe und Darstellung rein textueller Daten, ist die über Urls definierte Status-Verwaltung des klassische Modells einfacher zu implementieren. Allerdings lassen sich mit der Integration von Rich-Client-Konzepten wie Ajax auch klassische Webseiten optimieren.}
-\item \textbf{Performance}: Der Performancegewinn wird vor allem durch die Reduktion der Netzwerklast erreicht - Views werden bei einem SPI nicht am Server, sondern im Client aus Templates generiert, welche beim Anwendungsstart einmalig geladen werden. Der folgende Netzwerkverkehr wird also nicht mehr durch redundante View-Informationen aufgebläht, sondern beinhaltet nur noch die Daten-Synchronisation mit einem Backend. Die höhere Rechenlast am Client-Endgerät wird zusätzlich durch den von Renderings-Aufgaben entlasteten schnelleren Server ausgeglichen.
-\end{itemize}
-
-
-
-
-\noindent
-Die Verlagerung der View-Logik zum Client wirft allerdings auch neue Probleme auf.\\
-So kann der Status der Anwendung nicht auf herkömmliche Art und Weise über ein Url-Lesezeichen referenziert werden, sondern muss Anwendungsintern verwaltet werden. Einzelne Anwendungs-Komponenten werden über Fragment-Identifier mit dem Anchor-Hash referenziert, insgesamt besteht eine SPI-App in diesem Zusammenhang aber aus beliebig komplexen Zuständen statt Seiten \cite{SPI:MF}.\\
-Weitere Lösungen müssen für die Umsetzung von Search Engine Optimisations (SEO) gefunden werden. Dies ist für VoxageX im Rahmen dieser Arbeit zwar keine Anforderung - aber eine Suchmaschinen-Indizierung von PoI-Einträgen wäre sicher ein nützliches Feature.\\ \\
-Für die Realisierung der Anforderung nach Funktionsfähigkeit des Clients im Offline-Modus wird ein weiteres SPI-Konzept übernommen: Alle Ansichten (Views) der Anwendung werden im Client mit Javascript-Logik aus Roh-Daten und Html-Templates zusammengefügt, wobei letztere allesamt beim ersten Aufruf der Seite in den Browser geladen werden. Auf diese Weise können neue PoI-Einträge auch im Offline-Modus erstellt und dargestellt werden.\\
-%Die weitere Kommunikation mit dem (Backend-)Server dient nur noch der Synchronisation der Daten und der Kommunikation mit anderen Clients.
-% Diese Architektur ermöglicht es einem Benutzer jederzeit einen beliebigen Anwendungszustand auf einem verschiedenen Endgerät zu initialisieren.
-Es gibt verschiedene JS-Frameworks welche die Entwicklung einer SPI-Anwendung unterstützen (AngularJS$^{\textbf{\ref{WIKIANGULAR}}}$%
-% footnote
-\addtocounter{footnote}{1}%
-\footnotetext{\label{WIKIANGULAR}\href{http://de.wikipedia.org/wiki/AngularJS}{AngularJS - http://de.wikipedia.org/wiki/AngularJS}; letzter Zugriff: 01.03.2015}
-,  Ember.js$^{\textbf{\ref{WIKIEMBER}}}$%
-% footnote
-\addtocounter{footnote}{1}%
-\footnotetext{\label{WIKIEMBER}\href{http://de.wikipedia.org/wiki/Ember.js}{Ember.js - http://de.wikipedia.org/wiki/Ember.js}; letzter Zugriff: 01.03.2015}
-, Meteor$^{\textbf{\ref{WIKIMETEOR}}}$%
-% footnote
-\addtocounter{footnote}{1}%
-\footnotetext{\label{WIKIMETEOR}\href{http://en.wikipedia.org/wiki/Meteor\_(web\_framework)}{Meteor - http://en.wikipedia.org/wiki/Meteor\_(web\_framework)}; letzter Zugriff: 01.03.2015}
-). Allerdings beinhalten diese auch viele Lösungen, die für VoyageX nicht benötigt werden. Besipielsweise ist eine Data-Binding$^{\textbf{\ref{CMTDATABIN}}}$%
-% footnote
-\addtocounter{footnote}{1}%
-\footnotetext{\label{CMTDATABIN}\href{http://en.wikipedia.org/wiki/Data\_binding}{Data Binding - http://en.wikipedia.org/wiki/Data\_binding}; letzter Zugriff: 01.03.2015} Lösung dafür gedacht, entfernte Objekte in die View zu integrieren. Bei VoyageX wird in der View aber nur mit lokalen Objekten gearbeitet die dann über eine Batch-Synchronisation mit den Systemdaten zusammengeführt werden.\\
-	
-%	\begin{table}[H]
-%		\centering
-%		\begin{tabulary}{\columnwidth}{C >{\centering}m{1cm} C}
-%			\includegraphics[scale=0.4]{bilder/spi_history_1.png} & & \includegraphics[scale=0.4]{bilder/spi_history_2.png} \\
-%			\multicolumn{3}{c}{\includegraphics[scale=0.4]{bilder/zk-ng-architecture.png}}
-%		\end{tabulary}
-%	\end{table}
-  \begin{figure}[H]
-      \centering
-	  \includegraphics[scale=0.48]{bilder/spi.png}\\ 
-  	  \caption{Viewmodel und SPI}
-  \end{figure}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% System-Architektur
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{System-Architektur}\label{5_SA}
-Die System-Architektur von VoyageX basiert auf dem Client-Server-Modell. Die Darstellungs-Schicht wird am Client implementiert, während die Persistenz-Schicht und die Kommunikations-Schicht auf Client und Server verteilt werden.\\ \\
-Die Verteilung der Persistenz-Schicht ist durch die geforderte Offline-Funktionalität bedingt, sie wird über Replikation und Synchronisation eines Ausschnitts der Systemdaten organisiert. In den Abschnitten \ref{DBMS} und \ref{5_DSE} werden die Persistenz-Modelle von Server und Client ausführlicher beschrieben, als Datenaustausch-Format wird JSON genutzt. Die Aufgaben einer serverseitigen Daten-API werden von einer Webanwendung übernommen welche in dieser Hinsicht eher mit der API eines WebServices verglichen werden kann.
-Eine weitere Aufgabe der Webanwendung ist die Benutzer-Authentisierung.\\ \\
-Die Verteilung der Kommunikationsschicht ist unbedingt, für VoyageX wird sie mit der Publish-Subscribe-Lösung von Faye implementiert. Die Client-Server Komponenten von Faye werden sowohl im Frontend als auch im Backend hinter VoyageX-fähigen Schnittstellen gekapselt, so daß ein späterer Austausch der Kommunikations-Schicht möglich wird, ohne dafür weitere Anwendungs-Teile ändern zu müssen. Die einzelnen Module werden in \ref{5_MESSGNG} vorgestellt.\\
-  \begin{figure}[H]
-      \centering
-	  \includegraphics[scale=0.5]{bilder/system_architecture.png}
-  	  \caption{Verteilung der System-Komponenten}
-  \end{figure}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Backend
@@ -1640,12 +1858,14 @@ Für die Synchronisation der Systemdaten müssen folgende Probleme gelöst werde
 \end{itemize}
 
 \subsubsection{Ausführbarkeit der Anwendung im Offline-Modus}
+\paragraph{Application-Cache}
 Webseiten-Inhalte werden von einem Browser zwar gecached, allerdings gehen die geladenen Daten je nach Cache-Strategie in der Regel spätestens beim Beenden des Browsers verloren. Um die von einer Webseite geladenen Resourcen über einen Browser-Neustart persistent zu machen wird die in Html5 standardisierte Application-Cache-Schnittstelle genutzt. Dazu wird im Html-Tag über das Attribut \texttt{manifest} eine Datei referenziert, in der alle für die Client-Anwendung benötigten Resourcen (Assets) gelistet sind.
 \lstset{language=Html}
 \begin{lstlisting}[frame=single,numbers=none,xleftmargin=0pt]
 <html manifest="voyagex.mf">
 \end{lstlisting}%
 Der Browser speichert diese dann dauerhaft, so daß sie, unabhängig von Netzwerkverbindung oder zwischenzeitlichen Neustarts, in der Anwendung verfügbar sind.\\
+\paragraph{Templates}
 Um dynamische Inhalte, wie etwa neue POI-Einträge, im Offline-Modus darzustellen, müssen die entsprechenden Ansichten, wie in Abschnitt \ref{5_SPI} beschrieben, client-seitig aus Templates generiert werden.\\
 %In VoyageX wird aufgrund der Einfacheit kein Template-Framework 
 Dazu werden die Templates in die Hauptseite unsichtbar eingebunden und von der Coffee-Klasse  \texttt{VoyageX.TemplateHelper} für die Erzeugung der Ansichten verwendet.\\ \\
@@ -1845,6 +2065,7 @@ Für das Vorladen werden in VoyageX 2 Strategien implementiert:
   \end{figure}
 		
 	\end{itemize}
+	\item \textbf{Manuelle Auswahl}: Karten-Kacheln auf denen Bookmarks sind, werden ebenfalls lokal gespeichert.
 \end{itemize}
 
 \subsubsection{Lokales Speichern von POI-Daten und Synchronisation}
