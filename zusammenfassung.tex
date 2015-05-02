@@ -2,14 +2,29 @@
 \textbf{Zusammenfassung}
 \end{center}
 
-\noindent In dieser Arbeit wird die Entwicklung einer Web-Anwendung zur gruppenbasierten Bearbeitung von interaktiven Karten beschrieben.\\
-Dabei soll neue Funktionalität für die bereits produktiv eingesetzte Anwendung PUMAS-Voyage in einem vergleichbaren Anwendungskontext entwickelt werden. Insbesondere sollen die 3 neuen Anforderungen
+\noindent
+%Geo-basierte Funktionen werden heutzutage vielfach und in unterschiedlicher Weise in Anwendungen integriert, beispielsweise können sie den Benutzer
+%% als Teil Kontext-bezogener Dienste
+%bei Entscheidungsfindungs-Prozessen unterstützen (z.B. Gutes Sushi in der Nähe), oder ein direktes Informationsbedürfnis befriedigen (z.B. kürzester Weg nach B). 
+%mobilen Endgeräten ist ein geographischer Kontext sogar inhärent.
+Standort-bezogene Dienste werden heutzutage häufig
+%und in unterschiedlicher Weise
+in Anwendungen integriert, die berechneten Informationen werden in der Regel auf einer Karte präsentiert. Die Bild-Dateien zur Darstellung von Karten können von verschiedenen Dienst-Anbieter aus dem Internet geladen werden. Bei mobilen Anwendungen kommt es aber mitunter vor, daß keine Internet-Verbindung verfügbar ist (Funkloch), so daß von die der Karten-Darstellung abhängigen Funktionen nicht mehr genutzt werden können.\\ \\
+\noindent
+Im Rahmen des Projekts \textit{Pumas Voyage} werden Konzepte und Werkzeuge für die Beteiligung von Schülern an der Schulweg-Planung entwickelt. Die Schüler sollen dabei, mit Hilfe von mobilen Endgeräten und einer darauf ausgeführten Web-Anwendung, ihren Schulweg durch Einträge von markanten Punkten auf einer Karte mit einer Be-
+wertung von Sicher/Gut oder Gefährlich/Schlecht, und einem optionalen Kommentar, dokumentieren.\\
+In einer neue Version soll die Anwendung Verbindungs-unabhängig und um kooperative Funktionen erweitert werden.\\ \\
+\noindent
+In dieser Arbeit wird die Entwicklung einer Web-Anwendung zur kooperativen Bearbeitung von \texttt{Points of Interest (PoI)} auf interaktiven Karten beschrieben.
+%Dabei soll neue Funktionalität für die bereits produktiv eingesetzte Anwendung PUMAS-Voyage in einem vergleichbaren Anwendungskontext entwickelt werden. Insbesondere sollen die 3 neuen Anforderungen
+Insbesondere werden dabei folgende 3 Funktionen implementiert:
 \begin{itemize}
-\item Synchrone Interaktion
-\item Bereitstellung einer geographischen Basis-Karte und Bearbeitung darüberliegender Darstellungs-Schichten im Offline-Modus
-\item Implementierung einer Versionsverwaltung zur Umsetzung verteilter Kooperation
+\item Verbindungsunabhängige Darstellung bestimmter Ausschnitte einer geographischen Karte
+\item Verbindungsunabhängige, synchrone und asynchrone kooperative Bearbeitung von PoIs
+%\item Implementierung von Datensynchronisations-Mechanismen zur Umsetzung verteilter Kooperation
+\item Verbindungsunabhängige, synchrone und asynchrone Kommunikation zwischen den Anwendungs-Benutzern
 \end{itemize}
-implementiert werden.
+%implementiert werden.
 
   \vspace{2cm}
 
@@ -17,5 +32,14 @@ implementiert werden.
 \textbf{Abstract}
 \end{center}
 
-\noindent This bachelor thesis's objectives are to describe the Development of a Web-Application for group-based
-Collaboration on interactive Maps. 
+\noindent
+Location Based Services are nowadays frequently integrated in Applications, computed Information is then presented on a Map. The image-files for displaying a Map can be downloaded via Internet from various Service-Providers. With mobile Apps, though, sometimes no Internet-Connection is available (Dead Zones), which leaves Map-dependent Functions unusable.\\ \\
+The \textit{Pumas Voyage} Project's Objective is to develop Concepts and Tools for involving students in school travel planning. Equipped with the Pumas Voyage Webapp running on a mobile Device, the participating Students mark Points of Interest along their way to school, rating them Safe/Good or Dangerous/Bad with an optional descriptional comment.\\
+In a next Revision the Application should be usable in offline Mode and provide extended collaborative Functionality.\\ \\
+This bachelor thesis's objectives are to describe the Development of a Web-Application for cooperative work on \texttt{Points of Interest (PoI)} on interactive Maps, focusing on 3 Functions:
+\begin{itemize}
+\item Connection-independent display of certain regions of a map
+\item Connection-independent, synchronous and asynchronous cooperative editing of PoIs
+%\item Implementierung von Datensynchronisations-Mechanismen zur Umsetzung verteilter Kooperation
+\item Connection-independent, synchronous and asynchronous Communication between App-Users
+\end{itemize}

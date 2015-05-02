@@ -218,8 +218,12 @@
 	%urlcolor=blue
 %}
 \usepackage{hyperref}
+% nicht print-version:
 \hypersetup{colorlinks=true,citecolor=blue}
+% print-version: 
+%\hypersetup{colorlinks=false,pdfborder={0 0 0}}
 \urlstyle{tt}
+%\usepackage{fancyref}
 
 % konfigurierbarer Zeilenabstand
 \usepackage{setspace}
@@ -265,6 +269,8 @@
 %\setcounter{tocdepth}{5}
 % numbers for paragraphs in Content
 \setcounter{secnumdepth}{4}
+
+\usepackage{ccicons}
 
 % Datum, falls benutzt
 \date{Ort\\ \today \\ \vspace{0.2cm}}

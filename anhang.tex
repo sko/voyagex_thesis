@@ -1,0 +1,425 @@
+\section{Anhang}
+
+\subsection{Beschreibung der Use-Cases}
+
+% Registrieren
+\subsubsection{Registrieren}\label{subsubsec:uc_reg}
+\noindent \textbf{use case} Registrieren \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer, Backend \newline
+\indent \textbf{precondition} \newline
+\indent \indent - \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer klickt den Link 'Registrieren' und öffnet damit den Registrierungs-Dialog.
+\item Der Benutzer füllt alle Formularfelder aus und klickt den Registrieren-Button.
+\item Das System sendet eine Email mit einem Bestätigungslink an die angegebene Email-Adresse.
+\item Der Benutzer ruft die Url des Bestätigungs-Links auf
+\end{enumerate}
+\indent \indent \textbf{postcondition} \newline
+\indent \indent Der Benutzer ist registriert \newline
+\indent \textbf{exceptional flow} Email bereits eingetragen \newline
+\indent \indent Ein Benutzer ist mit der angegebenen Email-Adresse bereits registriert \newline
+\indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Registrierungs-Dialog bleibt geöffnet und das Problem wird angezeigt
+\end{itemize}
+\indent \indent \textbf{exceptional flow} Passwort zu kurz
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Das Passwort muss mindestens 8 Zeichen lang sein
+\end{itemize}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Registrierungs-Dialog bleibt geöffnet und das Problem wird angezeigt
+\end{itemize}
+\noindent \textbf{end} Registrieren \newline
+
+% Anmelden
+\subsubsection{Anmelden}\label{subsubsec:uc_anm}
+\noindent \textbf{use case} Anmelden \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer, Backend \newline
+\indent \textbf{precondition} \newline
+\indent \indent Der Benutzer ist nicht angemeldet \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer klickt den Link 'Anmelden' und öffnet damit den Anmelde-Dialog.
+\item Der Benutzer füllt alle Formularfelder aus und klickt den Anmelden-Button.
+\end{enumerate}
+\indent \indent \textbf{postcondition} \newline
+\indent \indent Der Benutzer ist angemeldet \newline
+\indent \textbf{exceptional flow} ungültige Anmeldedaten \newline
+\indent \indent es existiert kein Benutzer für die angegebenen Anmeldedaten \newline
+\indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Registrierungs-Dialog bleibt geöffnet und das Problem wird angezeigt
+\end{itemize}
+\noindent \textbf{end} Anmelden \newline
+
+% Lokale Karte navigieren
+\subsubsection{Lokale Karte navigieren (Positionierung des 'User'-Markers)}\label{subsubsec:uc_locmapnav}
+\noindent \textbf{use case} Lokale Karte navigieren \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer \newline
+\indent \textbf{precondition} \newline
+\indent \indent - \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer verschiebt den sichtbaren Kartenausschnitt indem er den Mauszeiger bei gedrückter linker Maustaste zieht.
+\item Der Benutzer markiert eine gewünschte Position indem er mit einem einfachen linken Mausklick auf die Karte klickt
+\end{enumerate}
+\indent \indent \textbf{alternative flow}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer zieht den blauen 'User'-Marker mit gedrückter linker Maustaste zu einer gewünschten Position.
+\end{itemize}
+\indent \indent \textbf{alternative flow} \newline
+\indent \indent Der blaue 'User'-Marker wird ber GPS positioniert \newline
+\indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Die Karte zentriert um die markierte Stelle und der blaue 'User'-Marker wird an dieser Position angezeigt.
+\end{itemize}
+\indent \indent \textbf{exceptional flow} fehlende Kacheln
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item das lokale System ist offline und für die gewünschte Position existieren keine vorgeladenen Kacheln
+\end{itemize}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer kann den 'User'-Marker nur an Stellen positionieren, für welche Kacheln vorgeladen wurden.
+\end{itemize}
+\noindent \textbf{end} Lokale Karte navigieren \newline
+
+% Entfernte Karte navigieren
+\subsubsection{Entfernte Karte navigieren (Demo)}\label{subsubsec:uc_remmapnav}
+\noindent \textbf{use case} Entfernte Karte navigieren \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer, Peer, Comm \newline
+\indent \textbf{precondition} \newline
+\indent \indent Erlaubnis des entfernten Benutzers \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer klickt auf den 'Spur'-Link im Toolbar-Popup eines 'Peer'-Markers von einem anderen Benutzer
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Die Position des blauen 'User'-Markers auf der Karte des gewählten anderen Benutzers und dessen folgende Positions-Änderungen werden auf der eigenen Karte angezeigt.
+\end{itemize}
+\noindent \textbf{end} Entfernte Karte navigieren \newline
+
+% PoI markieren
+\subsubsection{PoI markieren}\label{subsubsec:uc_poinew}
+\noindent \textbf{use case} PoI markieren \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer \newline
+\indent \textbf{precondition} \newline
+\indent \indent - \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer positioniert den 'User'-Marker an der gewünschten Stelle.
+\item Im Marker-Toolbar-Popup klickt er auf 'PoI Eintragen'.
+\item Es öffnet sich ein Dialog mit Eingabe-Feldern für Text und Anhang zum Eintrag.
+\item Der Benutzer füllt die entsprechenden Felder aus und klickt auf den Button 'Sichern'.
+\end{enumerate}
+\indent \indent \textbf{alternative flow} \newline
+\indent \indent Der Benutzer öffnet den Eintrags-Dialog mit einem Doppelklick \newline
+\indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Ein roter PoI-Marker wird auf der Karte angezeigt. In einem darüberliegenden Popup werden die im Dialog-Formular eingetragenen Daten angezeigt.  
+\end{itemize}
+\indent \indent \textbf{exceptional flow} Format des Media-Anhangs nicht unterstützt
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer möchte ein nicht unterstütztes Media-Format einer externen Quelle an den Eintrag anhängen.
+\end{itemize}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Eingabe-Dialog bleibt geöffnet und der Fehler wird angezeigt.
+\end{itemize}
+\indent \indent \textbf{exceptional flow} PoI bereits eingetragen
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer trägt innerhalb eines 3m-Umkreises eines exisitierenden PoI's einen neuen PoI ein
+\end{itemize}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Eintrag des Benutzers wird bei beim nächsten Datenabgleich im Online-Modus als Kommentar je nach Sortierungskriterium an erster oder letzter Stelle des  existierenden PoI-Eintrags angefügt
+\end{itemize}
+\noindent \textbf{end} PoI markieren \newline
+
+% PoI kommentieren
+\subsubsection{PoI kommentieren}\label{subsubsec:uc_poinote}
+\noindent \textbf{use case} PoI kommentieren \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer \newline
+\indent \textbf{precondition} \newline
+\indent \indent PoI-Popup geöffnet \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer klickt auf den 'Kommentieren'-Link im PoI-Marker-Popup und öffnet damit einen Eingabe-Dialog.
+\item Der Benutzer füllt die entsprechenden Eingabe-Felder aus und klickt den 'Eintragen'-Button.
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Kommentar des Benutzers wird an letzter Stelle der PoI-Kommentarliste angefügt
+\end{itemize}
+\noindent \textbf{end} PoI kommentieren \newline
+
+% Poi merken
+\subsubsection{Poi merken}\label{subsubsec:uc_poibookmark}
+\noindent \textbf{use case} Poi merken \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer \newline
+\indent \textbf{precondition} \newline
+\indent \indent - \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer klickt auf den 'Bookmark'-Link im Toolbar-Popup des 'Poi'-Markers.
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der markierte Ort ist in der Lesezeichen-Liste des Benutzers eingetragen
+\item Der Benutzer sieht bei künftigen Klicks auf das Toolbar-Icon die gespeicherte Notiz
+\end{itemize}
+\noindent \textbf{end} Ort merken \newline
+
+% Ort merken
+\subsubsection{Ort merken}\label{subsubsec:uc_locnote}
+\noindent \textbf{use case} Ort merken \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer \newline
+\indent \textbf{precondition} \newline
+\indent \indent - \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer klickt auf den 'Ort merken'-Link im Toolbar-Popup des 'User'-Markers.
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der markierte Ort ist in der Lesezeichen-Liste des Benutzers eingetragen
+\item Der Benutzer sieht bei künftigen Klicks auf das Toolbar-Icon die gespeicherte Notiz
+\end{itemize}
+\noindent \textbf{end} Ort merken \newline
+
+% Wahrnehmung eines anderen Benutzers beantragen
+\subsubsection{Wahrnehmung eines anderen Benutzers beantragen}\label{subsubsec:uc_reqmefollowpeer}
+\noindent \textbf{use case} Wahrnehmung eines anderen Benutzers beantragen \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer, Backend, Comm, Peer \newline
+\indent \textbf{precondition}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer befindet sich in der Ansicht 'Home'
+\item Der Benutzer folgt dem ausgewählten anderen Benutzer noch nicht
+\end{enumerate}
+\indent \indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer markiert einen anderen Benutzer aus der Liste 'Ich folge nicht'
+\item Der Benutzer sendet den Antrag auf Wahrnehmung mit einem Klick auf den 'Sichern'-Button an das Backend
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Das Backend sendet die Anfrage über Comm an den anderen Benutzer
+\item Der ausgewählte andere Benutzer ist jetzt unter 'Ich möchte folgen' gelistet
+\end{itemize}
+\noindent \textbf{end} Wahrnehmung eines anderen Benutzers beantragen \newline
+
+% Wahrnehmung durch einen anderen Benutzer gestatten
+\subsubsection{Wahrnehmung durch einen anderen Benutzer gestatten}\label{subsubsec:uc_grantpeerfollowme}
+\noindent \textbf{use case} Wahrnehmung durch einen anderen Benutzer gestatten \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer, Backend, Comm, Peer \newline
+\indent \textbf{precondition}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer befindet sich in der Ansicht 'Home'
+\item Ein anderer Benutzer hat eine entsprechende Anfrage gestellt und ist unter 'Möchten mir folgen' gelistet
+\end{enumerate}
+\indent \indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer markiert die 'erlauben'-Checkbox in der Zeile mit dem anderen Benutzernamen
+\item Der Benutzer sendet die Erlaubnis zur Wahrnehmung mit einem Klick auf den 'Sichern'-Button an das Backend
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Das Backend sendet die Erlaubnis über Comm an den ausgewählten anderen Benutzer
+\item Der ausgewählte andere Benutzer ist jetzt unter 'Folgen mir' gelistet
+\item Es ist ab sofort möglich, dem anderen Benutzer Nachrichten zu schicken.
+\end{itemize}
+\noindent \textbf{end} Wahrnehmung durch einen anderen Benutzer gestatten \newline
+
+% Wahrnehmung durch einen anderen Benutzer verweigern
+\subsubsection{Wahrnehmung durch einen anderen Benutzer gestatten}\label{subsubsec:uc_denypeerfollowme}
+\noindent \textbf{use case} Wahrnehmung durch einen anderen Benutzer verweigern \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer, Backend, Comm, Peer \newline
+\indent \textbf{precondition}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer befindet sich in der Ansicht 'Home'
+\item Ein anderer Benutzer hat eine entsprechende Anfrage gestellt und ist unter 'Möchten mir folgen' gelistet
+\end{enumerate}
+\indent \indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer markiert die 'verweigern'-Checkbox in der Zeile mit dem anderen Benutzernamen
+\item Der Benutzer sendet die Verweigerung zur Wahrnehmung mit einem Klick auf den 'Sichern'-Button an das Backend
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Das Backend sendet die Verweigerung über Comm an den ausgewählten anderen Benutzer
+\item Der ausgewählte andere Benutzer ist jetzt nicht mehr unter 'Möchten mir folgen' gelistet
+\end{itemize}
+\noindent \textbf{end} Wahrnehmung durch einen anderen Benutzer verweigern \newline
+
+% Notiz zu anderem Benutzer erstellen
+\subsubsection{Notiz zu anderem Benutzer erstellen}\label{subsubsec:uc_usernote}
+\noindent \textbf{use case} Notiz zu anderem Benutzer erstellen \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer \newline
+\indent \textbf{precondition} \newline
+\indent \indent - \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer klickt auf den 'Notiz-hinzufügen'-Link im Toolbar-Popup des Markers eines anderen Benutzers.
+\item Der Benutzer schreibt eine Notiz ins Textfeld
+\item Der Benutzer schließt das Fenster oder öffnet ein Popup eines beliebigen anderen Markers um die Notiz zu sichern
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Notiz-Text ist gesichert und kann durch erneuten Klick  auf den 'Notiz-hinzufügen'-Link angezeigt werden.
+\end{itemize}
+\noindent \textbf{end} Notiz zu anderem Benutzer erstellen \newline
+
+% P2P-Chat
+\subsubsection{P2P-Chat}\label{subsubsec:uc_chatp2p}
+\noindent \textbf{use case} P2P-Chat \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer \newline
+\indent \textbf{precondition} \newline
+\indent \indent P2P-Chat-Popup eines 'Peer'-Markers geöffnet \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer schreibt den Nachrichten-Text in das Eingabe-Textfeld und schickt die Nachricht mit drücken der EingabeTaste ab.
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Die gesendete Nachricht erscheint in einer Sprechblase mit Pfeil nach links im P2P-Chat-Popup.
+\item Der angeschriebene andere Benutzer wird auf die eingegangene Nachricht aufmerksam gemacht
+\item Die gesendete Nachricht erscheint in einer Sprechblase mit Pfeil nach rechts im P2P-Chat-Popup des angeschriebenen Benutzers.
+\end{itemize}
+\noindent \textbf{end} P2P-Chat \newline
+
+% Konferenz
+\subsubsection{Konferenz}\label{subsubsec:uc_chatconf}
+\noindent \textbf{use case} Konferenz \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer \newline
+\indent \textbf{precondition} \newline
+\indent \indent Der Benutzer befinet sich in der Ansicht 'Konferenz' \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Benutzer schreibt den Nachrichten-Text in das Eingabe-Textfeld und schickt die Nachricht mit drücken der EingabeTaste ab.
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Die gesendete Nachricht erscheint in einer Sprechblase mit Pfeil nach links in der Konferenz-Chat-Ansicht.
+\item Die gesendete Nachricht erscheint in einer Sprechblase mit Pfeil nach rechts in der Konferenz-Chat-Ansicht aller wahrnehmungsberechtigten Benutzer
+\end{itemize}
+\noindent \textbf{end} Konferenz
+
+% Internetverbindungs-Status
+\subsubsection{Internetverbindungs-Status}\label{subsubsec:uc_watchconnstate}
+\noindent \textbf{use case} Internetverbindungs-Status \newline
+\indent \textbf{actors} \newline
+\indent \indent Benutzer \newline
+\indent \textbf{precondition} \newline
+\indent \indent - \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der Status der Internetverbindung ändert sich
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item im Offline-Status werden die Daten und Aktionen lokal gespeichert und beim nächsten Verbindungsaufbau mit dem Backend synchronisiert
+\end{itemize}
+\noindent \textbf{end} Internetverbindungs-Status
+
+% Berechtigung zur Wahrnehmung eines anderen Benutzers erhalten
+\subsubsection{Berechtigung zur Wahrnehmung eines anderen Benutzers erhalten}\label{subsubsec:uc_watchgrantmefollowpeer}
+\noindent \textbf{use case} Berechtigung zur Wahrnehmung eines anderen Benutzers erhalten \newline
+\indent \textbf{actors} \newline
+\indent \indent Wahrnehmer, Backend, Comm, Peer \newline
+\indent \textbf{precondition}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item das lokale System ist online
+\item Der Benutzer hat eine Anfrage zur Wahrnehmung an einen anderen Benutzer gestellt
+\end{enumerate}
+\indent \indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Das Backend sendet über Comm die Erteilung der Erlaubnis zur Wahrnehmung eines anderen Benutzers
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der ausgewählte andere Benutzer ist jetzt unter 'Ich folge' gelistet
+\item In der Ansicht 'People Of Interest' wird der andere Benutzer gelistet und es wird ein Link zu seiner aktuellen Position angezeigt.
+\item Ist diese Position im Nahbereich, wird ein gelber 'Peer'-Marker an dieser Position angezeigt
+\item Es ist ab sofort möglich, in Echtzeit mit dem anderen Benutzer zu Kommunizieren
+\end{itemize}
+\noindent \textbf{end} Berechtigung zur Wahrnehmung eines anderen Benutzers erhalten
+
+% Position/Bewegung anderer Benutzer
+\subsubsection{Position/Bewegung anderer Benutzer}\label{subsubsec:uc_watchposofpeer}
+\noindent \textbf{use case} Position/Bewegung anderer Benutzer \newline
+\indent \textbf{actors} \newline
+\indent \indent Wahrnehmer, Comm, Peer \newline
+\indent \textbf{precondition} \newline
+\indent \indent das lokale System ist online \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item ein anderer Benutzer befindet sich im Nahbereich.
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Ein 'Peer'-Marker ist auf der lokalen Karte an der Position zu sehen, an welcher der 'User'-Marker auf der entfernten Karte des anderen Benutzers positioniert ist.
+\item Änderungen werden in Echtzeit bernommen.
+\end{itemize}
+\noindent \textbf{end} Position/Bewegung anderer Benutzer
+
+% Poi-Markierung/Kommentar anderer Benutzer
+\subsubsection{Poi-Markierung/Kommentar anderer Benutzer}\label{subsubsec:uc_watchpoinewornotebypeer}
+\noindent \textbf{use case} Poi-Markierung/Kommentar anderer Benutzer \newline
+\indent \textbf{actors} \newline
+\indent \indent Wahrnehmer, Comm, Peer \newline
+\indent \textbf{precondition} \newline
+\indent \indent das lokale System ist online \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Ein wahrnehmbarer anderer Benutzer bearbeitet einen PoI
+\end{enumerate}
+\indent \indent \textbf{alternative flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Der PoI wurde editiert als der jetzt angemeldete Benutzer offline war
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Ein visuelles und/oder akkustisches Signal weist den Benutzer auf die Änderungen am PoI hin (grüner Pfeil blinkt)
+\item In der 'Points of Interst'-Ansicht blinkt der entsprechende Eintrag und der Benutzer kann über einen Link direkt zum PoI navigieren und die Änderung sehen.
+\end{itemize}
+\noindent \textbf{end} Poi-Markierung/Kommentar anderer Benutzer
+
+% P2P-Chat/Konferenz-Nachricht anderer Benutzer 
+\subsubsection{P2P-Chat/Konferenz-Nachricht anderer Benutzer}\label{subsubsec:uc_watchmsgbypeer}
+\noindent \textbf{use case} P2P-Chat/Konferenz-Nachricht anderer Benutzer \newline
+\indent \textbf{actors} \newline
+\indent \indent Wahrnehmer, Comm, Peer \newline
+\indent \textbf{precondition} \newline
+\indent \indent das lokale System ist online \newline
+\indent \textbf{main flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Ein wahrgenommener anderer Benutzer sendet eine P2P-Chat- oder Konferenz-Nachricht
+\end{enumerate}
+\indent \indent \textbf{alternative flow}
+\begin{enumerate}[labelwidth=0pt,leftmargin=39pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Die P2P-Chat- oder Konferenz-Nachricht wurde gesendet als der jetzt angemeldete Benutzer offline war
+\end{enumerate}
+\indent \indent \textbf{postcondition}
+\begin{itemize}[label={},labelwidth=0pt,leftmargin=24pt,noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Ein visuelles und/oder akkustisches Signal weist den Benutzer auf den Empfang einer Nachricht des anderen Benutzers hin (Konferenz-Menu oder 'Peer'-Marker des anderen Benutzers blinken)
+\item Die Nachricht wird als Sprechblase mit einem rechtsgerichteten Pfeil angezeigt.
+\end{itemize}
+\noindent \textbf{end} P2P-Chat/Konferenz-Nachricht anderer Benutzer
+
+\newpage
