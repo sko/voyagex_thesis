@@ -595,13 +595,13 @@ Check-Ins tragen in der Community zum Gemeinschafts-Gefühl bei (Community-Exper
 Empfehlungsdienste sind neben Verknüpfungen zu sozialen Netzwerken eine weitere sehr verbreitete Komponente auf vielen Webseiten. Allerdings erscheinen die Empfehlungen meistens in Form von Werbe-Einblendungen auf einer Webseite. Tatsächlich gehören aber auch Webseiten mit primärer Recommender Funktion, die sich auf den eigenen Seiten-Inhalt bezieht, zu den erfolgreichsten Plattformen im Internet (Yelp$^{\textbf{\ref{FN_YELP}}}$%
 % footnote
 \addtocounter{footnote}{1}%
-\footnotetext{\label{FN_YELP}\href{http://www.yelp.de/}{http://www.yelp.de/}; letzter Zugriff: 13.05.2015}, Netflix$^{\textbf{\ref{FN_NETFL}}}$%
+\footnotetext{\label{FN_YELP}\href{http://www.yelp.de/}{Yelp - http://www.yelp.de/}; letzter Zugriff: 13.05.2015}, Netflix$^{\textbf{\ref{FN_NETFL}}}$%
 % footnote
 \addtocounter{footnote}{1}%
-\footnotetext{\label{FN_NETFL}\href{https://www.netflix.com/}{https://www.netflix.com/}; letzter Zugriff: 13.05.2015}, Youtube$^{\textbf{\ref{FN_YOUTB}}}$%
+\footnotetext{\label{FN_NETFL}\href{https://www.netflix.com/}{Netflix - https://www.netflix.com/}; letzter Zugriff: 13.05.2015}, Youtube$^{\textbf{\ref{FN_YOUTB}}}$%
 % footnote
 \addtocounter{footnote}{1}%
-\footnotetext{\label{FN_YOUTB}\href{https://www.youtube.com/}{https://www.youtube.com/}; letzter Zugriff: 13.05.2015}, ...)\\ 
+\footnotetext{\label{FN_YOUTB}\href{https://www.youtube.com/}{Youtube - https://www.youtube.com/}; letzter Zugriff: 13.05.2015}, ...)\\ 
 \textit{Ein Empfehlungsdienst (Recommender System) ist ein Softwaresystem welches das Ziel hat eine Vorhersage zu treffen, die quantifiziert wie stark das Interesse eines Benutzers an einem Objekt ist, um dem Benutzer genau die Objekte aus der Menge aller vorhandenen Objekte zu empfehlen, für die er sich wahrscheinlich am meisten interessiert.}\cite{WIKI:RECSYS}\\
 Recommender Systems sind also adaptive Systeme, die sowohl ideele wie auch kommerzielle Ziele verfolgen
 in dem sie den Benutzer eine Auswahl von kontextueller Information zukommen lassen.
@@ -1702,7 +1702,7 @@ Die Server-Komponente wird bei Rack, wie in \ref{FAYERAILS} beschrieben, als Mid
 Die Anwendungs-Logik des Frontends von VoyageX ist in \texttt{CoffeeScript}$^{\textbf{\ref{CMTBAYX}}}$%
 \addtocounter{footnote}{1}%
 \footnotetext{\label{CMTBAYX}\href{http://de.wikipedia.org/wiki/CoffeeScript}{CoffeeScript - http://de.wikipedia.org/wiki/CoffeeScript}; letzter Zugriff: 22.01.2015} geschrieben, welches im Backend vom Ruby-Gem \texttt{coffee-rails} in JavaScript transkompiliert wird.\\
-Bei zunehmender Anwendungs-Komplexität ist es schwierig, übersichtlichen Programm-Code mit herkömmlichen JavaScript herzustellen. Ein wesentlicher Nutzen von CoffeeScript ist die Verbesserung der Lesbarkeit von Javascript-Code. Dies wird durch eine klare objektorientierte Syntax und durch weitere Syntactic-Sugar-Features und Utilitiy-Methoden erreicht. Ein weiterer Vorteil ist die Erkennung von Syntaxfehlern beim Transkompilieren$^{\textbf{\ref{CMTBAYX}}}$%
+Bei zunehmender Anwendungs-Komplexität ist es schwierig, übersichtlichen Programm-Code mit gewöhnlichem JavaScript zu schreiben. Ein wesentlicher Nutzen von CoffeeScript ist die Verbesserung der Lesbarkeit von Javascript-Code. Dies wird durch eine saubere objektorientierte Syntax und durch weitere Syntactic-Sugar-Features und Utilitiy-Methoden erreicht. Ein weiterer Vorteil ist die Erkennung von Syntaxfehlern beim Transkompilieren$^{\textbf{\ref{CMTBAYX}}}$%
 \addtocounter{footnote}{1}%
 \footnotetext{\label{CMTBAYX}Compiler bieten durch statische Code-Analyse generell gute Möglichkeiten zur Fehlererkennung.}. 
 
@@ -1752,7 +1752,7 @@ Web Storage war ursprünglich Teil der Html5 Spezifikation, ist aber mittlerweil
 	\end{table}
 
 \paragraph{Application Cache}
-Im Application Cache kann die Anwendung Quelldateien, wie Javascript und CSS-Stylesheets, Bild-Dateien oder andere statischen Anwendungskomponenten für einen späteren Gebrauch im Offline-Modus vom Browser speichern lassen. Die zu speichernden Komponenten werden dabei in einer Manifest-Datei$^{\textbf{\ref{CACMAN}}}$%
+Im Application Cache kann die Anwendung Quelldateien, wie Javascript und CSS-Stylesheets, Bild-Dateien oder andere statischen Anwendungskomponenten für einen späteren Gebrauch im Offline-Modus vom Browser speichern. Die zu speichernden Komponenten werden dabei in einer Manifest-Datei$^{\textbf{\ref{CACMAN}}}$%
 % footnote
 \addtocounter{footnote}{1}%
 \footnotetext{\label{CACMAN}\href{http://en.wikipedia.org/wiki/Cache_manifest_in_HTML5}{Cache Manifest - http://en.wikipedia.org/wiki/Cache\_manifest\_in\_HTML5}; letzter Zugriff: 01.03.2015}
@@ -1774,7 +1774,7 @@ notiert.
 \paragraph{File API}
 Die File-API ist eine von Html5 definierte Javascript-Schnittstelle die es einer Anwendung erlaubt, Dateien lokal zu speichern. Im Gegensatz zum \texttt{localStorage}, welches nur das Speichern von Zeichenketten ermöglicht, steht mit dieser API ein echtes Filesystem zur Verfügung. Ein entscheidender Vorteil gegenüber dem localStorage ist es, daß die maximale Speicherkapazität nach oben nicht durch 5 MB$^{\textbf{\ref{CMT5MBLIM}}}$%
 \addtocounter{footnote}{1}%
-\footnotetext{\label{CMT5MBLIM}Dieser Wert kann je nach Browser variieren.} beschränkt ist, sondern vom Benutzer festgelegt wird. Daten können somit auch im Gigabyte-Bereich im Client abgelegt werden.
+\footnotetext{\label{CMT5MBLIM}Dieser Wert kann je nach Browser variieren.} beschränkt ist, sondern vom Benutzer festgelegt wird. Daten können somit auch im Gigabyte-Bereich auf dem Client abgelegt werden.
 	\begin{table}[H]
   		\begin{adjustwidth}{-1.5cm}{1.5cm}
 		\centering
@@ -1806,16 +1806,18 @@ Mit \texttt{MediaSource} und \texttt{MediaStream} sind in Html5 Javascript-Schni
 	\end{table}
 
 \subsubsection{Datenspeicherung und Entitäten}\label{5_DSE}
-Bei Single-Page-Interface Webanwendungen, die das \texttt{Model View ViewModel (MVVM)} Muster realisieren, werden die MVVM-Komponenten \texttt{View} und \texttt{ViewModel} clientseitig implementiert. Die \texttt{Model}-Komponenten befinden sich am Backend-Server, wobei die Daten dann über \texttt{Databinding} in die View gelesen bzw. ins Model geschrieben werden$^{\textbf{\ref{CMTMVVM}}}$%
+Bei Single-Page-Interface Webanwendungen, werden die Pattern-Komponenten \texttt{View} und \texttt{PresentationModel}$^{\textbf{\ref{CMTPRESMD}}}$%
 \addtocounter{footnote}{1}%
-\footnotetext{\label{CMTMVVM}\href{http://de.wikipedia.org/wiki/Model\_View\_ViewModel}{MVVM - http://de.wikipedia.org/wiki/Model\_View\_ViewModel}; letzter Zugriff: 22.04.2015}. Nach Daten-Änderungen wird dann eine aktualisierte GUI-Ansicht mit Javascript aus Html-Templates, CSS und den Daten generiert. Bei einer offline-fähigen Anwendung wie VoyageX werden aber auch die Model-Komponenten clientseitig implementiert, da hier eine eigene, von einer Netzwerk-Verbindung unabhängige Persistenz-Verwaltung benötigt wird.\\ \\
+\footnotetext{\label{CMTPRESMD}\href{http://martinfowler.com/eaaDev/PresentationModel.html}{PresentationModel - http://martinfowler.com/eaaDev/PresentationModel.html}; letzter Zugriff: 22.05.2015} clientseitig implementiert. Die \texttt{Model}-Komponenten befinden sich am Backend-Server, wobei die Daten dann über \texttt{Databinding} in die View gelesen bzw. ins Model geschrieben werden$^{\textbf{\ref{CMTMVVM}}}$%
+\addtocounter{footnote}{1}%
+\footnotetext{\label{CMTMVVM}\href{http://de.wikipedia.org/wiki/Model\_View\_ViewModel}{MVVM - http://de.wikipedia.org/wiki/Model\_View\_ViewModel}; letzter Zugriff: 22.04.2015}. Nach Daten-Änderungen wird dann eine aktualisierte GUI-Ansicht mit Javascript aus Html-Templates, CSS und den Daten generiert. Bei einer offline-fähigen Anwendung wie VoyageX werden aber auch die \texttt{Model}-Komponenten clientseitig implementiert, da hier eine eigene, von einer Netzwerk-Verbindung unabhängige Persistenz-Verwaltung benötigt wird.\\ \\
 Folgende (replizierte) Daten müssen für eine Nutzung der Anwendung bei fehlender Netzwerkverbindung lokal gespeichert und geändert werden können:
 \begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
 \item PoI-Daten, die für den lokalen Benutzer relevant sind. Die Relevanz wird dabei durch die vom Benutzer festgelegte geographische Begrenzung des bearbeitbaren Kartenauschnitts entschieden. 
 \item Daten über entfernte Benutzer, zu denen eine Kontakt-Beziehung besteht.
 \item PoI-Daten die der Benutzer im Offline-Modus selbst erstellt.
 \end{itemize}
-Für Speichern und Verwaltung von Daten im Client-Browser gibt es mehrere Möglichkeiten die sich nach Kapazität und Plattform-Verfügbarkeit unterscheiden.
+Für das Speichern und die Verwaltung von Daten im Client-Browser gibt es mehrere Möglichkeiten die sich nach Kapazität und Plattform-Verfügbarkeit unterscheiden.
 
 \enlargethispage{3\baselineskip} % allow 3 more lines on current page
 \paragraph{localStorage (Webstorage), IndexedDB, WebSQL und File-API}
@@ -1848,10 +1850,11 @@ Als kommender Standard und wegen der Speicherkapazität und den erweiterten Such
 		\end{tabulary}
   		\end{adjustwidth}
 	\end{table}
+\noindent
 Aus diesem Grund wird in VoyageX eine Kombination aus \texttt{localStorage} und \texttt{File-API} für die client-seitige Persistenz der Anwendungsdaten gewählt. Die Persistenz-Schnittstelle der CoffeeScript-Klasse \texttt{StorageController} von VoyageX erlaubt allerdings einen aufwandsarmen späteren Austausch der gewählten Implementierung.
 
 \paragraph{Entitäten}
-Einige Entitäten des im Backend verwendeten, relationale ER-Modells werden auf Client-Seite mit JSON-Datenstrukturen nachgebildet. Dabei werden die JSON-Objekte mit einem \texttt{Schlüssel} entweder einzeln (Id im Schlüssel) oder als Liste (Id im JSON-Objekt) im localStorage gespeichert.
+Viele Entitäten des im Backend verwendeten, relationalen ER-Modells werden auf Client-Seite mit JSON-Datenstrukturen nachgebildet. Dabei werden die JSON-Objekte mit einem \texttt{Schlüssel} entweder einzeln (Id im Schlüssel) oder als Liste (Id im JSON-Objekt) im localStorage gespeichert.
 \lstset{language=JavaScript}
 \begin{lstlisting}[frame=single,xleftmargin=0pt,numbers=none,caption={Lesen und Speichern von JSON-Objekten mit localStorage},captionpos=b]
 key = 'comm.locations'
@@ -1907,11 +1910,7 @@ jQuery ist eine Javascript-Bibliothek die zahlreiche Funktionen für die Impleme
 \addtocounter{footnote}{1}%
 \footnotetext{\label{CMTRICHIA}\href{http://de.wikipedia.org/wiki/Rich\_Internet\_Application}{RIAs sind Webanwendungen mit einer hoch-interaktiven Benutzeroberfläche - http://de.wikipedia.org/wiki/Rich\_Internet\_Application}; letzter Zugriff: 22.04.2015} bereitstellt:
 	\begin{itemize}
-		\item DOM: Manipulation und Interaktion mit
-		\begin{itemize}
-			\item Animation
-			\item Events
-		\end{itemize}
+		\item DOM: Manipulation und Interaktion mit Animationen und Ereignis-Notifikation
 		\item Ajax
 		\item Plugin-Schnittstelle für Implementierung zusätzlicher Funktionen
 	\end{itemize}
@@ -1934,13 +1933,13 @@ Durch seine flexible Plugin-Schnittstelle und ein entsprechend großes Angebot f
 
 \paragraph{Faye Client}
 Zur serverseitigen Kommunikations-Schnittstelle (vgl. Abschnitt \ref{FAYERAILS}) wird mit dem Faye Paket
-eine Messaging-Client-Javascript-Bibliothek augeliefert, die den Nachrichten-Austausch mit dem Backend steuert. Nachdem der Client instanziert wurde stehen 3 Funktionen für den Aufbau einer eigenen Kommunikations-Lösung zur Verfügung:\\
+eine Messaging-Client-Javascript-Bibliothek augeliefert, die den Nachrichten-Austausch mit dem Backend organisiert. Nachdem der Client instanziert wurde stehen 3 Funktionen für den Aufbau einer eigenen Kommunikations-Lösung zur Verfügung:\\
 \lstset{language=JavaScript}
 \begin{lstlisting}[frame=single,numbers=none,xleftmargin=0pt,caption={API des Faye-Clients},captionpos=b]
     client = new Faye.Client(document.location.origin+'/comm')
 
-    client.subscribe channel, callBack
-    client.unsubscribe channel, callBack
+    client.subscribe channel, messageCallBack
+    client.unsubscribe channel
 
     client.publish channel, message
 \end{lstlisting}
@@ -1952,8 +1951,8 @@ späteren Transport gepuffert, ohne daß der Benutzer selbst das Versenden erneu
 Es gibt bei VoyageX 3 verschiedene Online-Zustände:
 	\begin{itemize}
 		\item Plattform: Wenn der Rechner des Benutzers bzw. der Browser ist können Kartenkachel geladen werden. Zustand wird über navigator.Online ermittelt.
-		\item Backend: Wenn eine Verbindung zim Backend besteht können Daten synchronisiert werden. Zustand wird über eigene "`ping"`-Funktion  überwacht (falls Plattform online ist).
-		\item Faye-Server: Wenn eine Verbindung zum Kommunikations-Server besteht können Echtzeit-Nachrichten ausgetauscht werden. Zustand wird über eigene "`ping"`-Funktion  überwacht (falls Backend online ist)..
+		\item Backend: Wenn eine Verbindung zum Backend besteht können Daten synchronisiert werden. Zustand wird über eigene "`ping"'-Funktion  überwacht (falls Plattform online ist).
+		\item Faye-Server: Wenn eine Verbindung zum Kommunikations-Server besteht können Echtzeit-Nachrichten ausgetauscht werden. Zustand wird vom Faye-Client per Websocket-Status überwacht.
 	\end{itemize}
 
 
@@ -1963,7 +1962,7 @@ In VoyageX gibt es 3 Haupt-Ansichten, zwischen denen über das Haupt-Menu gewech
 \begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
 \item \textbf{Konferenz}: Diese Ansicht wird für die Gruppenkommuniation genutzt und zeigt ein 2-teiliges Chat-Fenster: Im oberen Bereich werden die Nachrichten angezeigt, im unteren Bereich kann der Benutzer den Text für eigene Nachrichten eingeben und per Eingabetaste absenden. 
 \item \textbf{Karte}: In dieser Ansicht werden die Karte, sowie Navigations- und Steuerungs-Elemente angezeigt.
-\item \textbf{Heim}: In der Heimansicht befinden sich die Eingabe- und Steuerungs-Elemente zur Verwaltung der Benutzer- und Kontakt-Daten.
+\item \textbf{Home}: In der Home-Ansicht befinden sich die Eingabe- und Steuerungs-Elemente zur Verwaltung der Benutzer- und Kontakt-Daten.
 \end{itemize}
 	
 	\begin{table}[H]
@@ -1981,7 +1980,7 @@ Ein Klick auf den grünen Pfeil links unten öffnet ein Kontext-Navigations-Fens
 Jede dieser Ansichten beinhaltet Links zu Punkten auf der Karte und ermöglicht damit eine schnelle Kontext-bezogene Navigation:
 \begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
 \item \textbf{Points-Of-Interest}: Hier werden alle PoIs im angegebenen Umkreis angezeigt. 
-\item \textbf{Bookmarked Locations}: Hier werden alle PoIs und Locations angezeigt für die der Benutzer
+\item \textbf{Bookmarked Locations}: Hier werden alle PoIs und Locations angezeigt, für die der Benutzer
 ein Lesezeichen eingetragen hat.
 \item \textbf{People Of Interest}: Hier werden alle entfernten Benutzer angezeigt, mit denen der lokale Benutzer eine Kontakt-Beziehung hält.
 \end{itemize}
@@ -2013,8 +2012,8 @@ Eine Sitzung ist aus Sicherheitsgründen zeitlich begrenzt. Da sich ein Benutzer
 
 \paragraph{Quick Registration}
 Um es neuen Benutzern zu erleichtern das funktionale Angebot von VoyageX kennenzulernen und dennoch die registrierten 
-Mitglieder der Community vor Störungen durch Aktivitäten unbekannter Nutzer zu schützen, wird eine Quick Registration angeboten, die eine volatile Collaborative Session ermöglicht (siehe auch \cite[S. 72ff.]{SCLU:PFCMI}).
-Bei dieser Form der Registrierung ist der Funktionsumfang der Anwendung allerdings eingschränkt.
+Mitglieder der Community vor Störungen durch Aktivitäten unbekannter Nutzer zu schützen, wird eine Quick Registration angeboten, die eine volatile kollaborative Session ermöglicht (siehe auch \cite[S. 72ff.]{SCLU:PFCMI}).
+Bei dieser Form der Registrierung ist der Funktionsumfang der Anwendung für den Benutzer allerdings das Lesen von Einträgen beschränkt.
 
 
 \subsubsection{Community Support}
@@ -2069,7 +2068,7 @@ Die Initialisierung erfolgt in mehreren Stufen, da einzelne benötigte Module nu
 
 \subsubsection{Initialisierung der Kartenansicht}\label{5_DARS_KART}
 %Die Karten-Ansicht wird mit dem Map-Viewer von LeafletJS initialisiert.
-Für die Initialisierung der Karten-Darstellung mit dem LeafletJS-Map-Viewer muß im Html-Quelltext der Seite zunächst ein mit einem frei wählbaren id-Attribut gekennzeichnetes Html-\texttt{div}-Element notiert werden, welches von Leaflet für die Einbindung der Karte genutzt werden kann.
+Für die Initialisierung der Karten-Darstellung mit dem LeafletJS-Map-Viewer muß im Html-Quelltext der Seite zunächst ein mit einem frei wählbaren id-Attribut gekennzeichnetes Html-\texttt{div}-Element bereitgestellt werden, welches von Leaflet für die Einbindung der Karte genutzt werden kann.
 \lstset{language=Html5}
 \begin{lstlisting}[frame=single,numbers=none,xleftmargin=0pt]
 <div id="map"></div>
@@ -2090,7 +2089,6 @@ initiial das Zoom-Level 16 eingestellt und die Karte um die letzte bekannte Posi
    				   	 layers: [tileLayer] }
   new L.Map('map', mapOptions)
 \end{lstlisting} \vspace{0.8cm}
-
 \noindent Wie in \ref{LEAFL} bereits beschrieben, macht Leaflet keine Vorgaben zum Darstellungs-Inhalt sondern benötigt nur die Urls der Kacheln aus denen die Karte zusammengesetzt werden soll. Leaflet berechnet dabei für jede Kachel des aktuell angezeigten Kartenabschittes den Koordinaten-Offset des oberen linken Kachelpunktes. Mit diesem x/y-Wert und dem aktuell eingestellten Zoom-Level z kann man alle für die Anzeige benötigten Kacheln identifizieren, und dann von einem Tile-Service unter Urls nach dem (Beispiel-)Muster 
 \lstset{language=JavaScript}
 \begin{lstlisting}[frame=single,numbers=none,xleftmargin=0pt,caption={Kachel-Bild-Url-Template},captionpos=b,label={lst:CL_TSPUTempl}]
@@ -2098,6 +2096,7 @@ http://a.tiles.mapbox.com/v4/stephankoeller.k5hhdli3/{z}/{x}/{y}.png
 \end{lstlisting}%
 laden.
 
+\enlargethispage{3\baselineskip} % allow 3 more lines on current page
 \subsubsection{Darstellungs-Elemente}
 VoyageX bietet eine Desktop-Version und eine mobile Version der funktional identischen graphischen Benutzeroberfläche des Clients, um die plattform-spezifischen Darstellungs-Parameter zu berücksichtigen.
 Die Unterschiede  der Ansicht sind aber wegen der überschaubaren Funktionalität gering.
@@ -2118,7 +2117,7 @@ Die Unterschiede  der Ansicht sind aber wegen der überschaubaren Funktionalitä
 Mit Markern werden feste und bewegliche Punkte auf der Karte gekennzeichnet. In VoyageX gibt es 3 Marker-Typen:
 \begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
 \item \includegraphics[scale=0.3]{bilder/marker-icon-blue.png} \textbf{Arbeitsmarker}: Mit der Positionierung dieses Markers wird ein Punkt auf der Karte ausgewählt, den der Benutzer bearbeiten möchte. Die Positionierung kann automatisch über die GPS-Standortbestimmung, oder manuell mit einem Klick auf die Karte durchgeführt werden. Es gibt nur einen Arbeitsmarker pro Client.
-\item \includegraphics[scale=0.3]{bilder/marker-icon-red.png} \textbf{PoI-Marker}: Kennzeichnen Points of Interest (PoI), also Orte oder Objekte. Die Anzahl der PoIs ist nicht begrenzt, es wäre aber sinnvoll die Anzeige, wie bei anderen Location-Based-Apps durch Kategorie-Filter einzugrenzen (z.B. Sehenswürdigkeit, Gefahrenstelle, Gastronomie, ...)
+\item \includegraphics[scale=0.3]{bilder/marker-icon-red.png} \textbf{PoI-Marker}: Kennzeichnen Points of Interest (PoI), also Orte oder Objekte. In VoyageX werden immer alle PoIs des Karten-Ausschnitts angezeigt, es wäre aber sinnvoll die Anzeige, wie bei anderen Location-Based-Apps durch Kategorie-Filter einzugrenzen (z.B. Sehenswürdigkeit, Gefahrenstelle, Gastronomie, ...)
 %, welche durch eine Suchfunktion definiert werden könnten.
 %Im Rahmen dieser Arbeit wurde auf dieses Feature aufgrund des dafür nötigen Aufwands verzichtet.
 \item \includegraphics[scale=0.3]{bilder/marker-icon-yellow.png} \textbf{Peer-Marker}: Mit diesen Markern werden Positionen von den Arbeitsmarkern entfernter Benutzer (Peers) angezeigt. Voraussetzung dafür ist eine Erlaubnis des jeweiligen Peers. Die Position des Markers kann dabei durch folgende Funktions-Modi festgelegt sein:
@@ -2146,8 +2145,8 @@ Mit dem Arbeitsmarker können Funktionen und Einstellungen zur Kartenbearbeitung
 	\begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
 		\item \textbf{Plain Text}: Ein Plain-Text Eintrag hat keinen Anhang. Allerdings wird als Default Icon ein weisses Rauschen angezeigt. Dies motiviert den Benutzer dann vielleicht doch noch einen anschaulicheren Anhang zu wählen.
 		\item \textbf{Foto}: Falls verfügbar, kann mit der Kamera des Endgeräts ein Foto aufgenommen und angehängt werden. Bei mehreren Kameras kann der Benutzer eine Auswahl treffen.
-		\item \textbf{Datei}: Vom lokalen Datei-System kann eine Bild-, Audio- oder Video.Datei hochgeladen werden.
-		\item \textbf{Embed}: Embed sind Html-Code-Schnipsel mit denen Anhänge von externen Social-Media-Seiten wie Youtube oder Soundcloud eingebunden werden können. Einfache URLs werden als Link zu einer Bild-Datei interpretiert.
+		\item \textbf{Datei}: Vom lokalen Datei-System kann eine Bild-, Audio- oder Video-Datei hochgeladen werden.
+		\item \textbf{Embed}: Embeds sind Html-Code-Schnipsel mit denen Anhänge von externen Social-Media-Seiten wie Youtube oder Soundcloud eingebunden werden können. Einfache URLs werden als Link zu einer Bild-Datei interpretiert.
 	\end{itemize}
 \item \includegraphics[scale=0.15]{bilder/icons/add-bookmark.png} \textbf{Lesezeichen}: Öffnet ein Textfeld für eine Notiz zur aktuellen Markerposition. Diese Daten sind nur für den persönlichen Gebrauch des Benutzers bestimmt, und werden nicht geteilt. Bookmarks unterstützen den Benutzer beim Navigieren, Planen und Ideen sammeln.
 Sie werden im Kontext-Navigations-Fenster angezeigt.
@@ -2353,7 +2352,7 @@ getTile: (xYZ) ->
 _getTileFile: (xYZ, deferred) ->
   path = '/'+xYZ[2]+'/'+xYZ[0]+'/'+xYZ[1]
   getDirectory(path).getFile(path, {}, (fileEntry) ->
-  	  deferred.resolve fileEntry.toURL FileUtils.TILE_IMAGE_CONTENT_TYPE
+  	  deferred.resolve fileEntry.toURL TILE_IMAGE_CONTENT_TYPE
   	, (error) ->
   	  deferred.resolve MapControl.noStoredTileUrl(_xYZToView(xYZ))
 \end{lstlisting}
@@ -2362,7 +2361,7 @@ _getTileFile: (xYZ, deferred) ->
   \hline
 2: & Für das asynchrone Lesen der Kachel-Bild-Datei wird ein \texttt{Deferred} Objekt erzeugt, welches Callback-Methoden einer \texttt{Promise} verwaltet \\ \hline
 4: & Die \texttt{Promise} wird anstatt einer echten Url zurückgegeben  \\ \hline
-9: & Die Deferred-Callback-Methoden werden aufgerufen, nachdem die Bild-Datei vollständig gelesen und dem Deferred-Objekt in Form einer Filesystem-Url über den resolve-Aufrufe übergeben wurde.\\ \hline
+9: & Die Deferred-Callback-Methoden \texttt{resolve} werden aufgerufen, nachdem die Bild-Datei vollständig gelesen und dem Deferred-Objekt in Form einer Filesystem-Url über den resolve-Aufrufe übergeben wurde.\\ \hline
 11: & Im Fehlerfall, wenn die Datei nicht existiert, wird die Promise nach einer Original-Kachel-Bild-URL oder einer Info-Bild-URL aufgelöst \\ \hline
   \end{tabulary}
 \end{table}
@@ -2390,7 +2389,7 @@ _getTileFile: (xYZ, deferred) ->
 \enlargethispage{3\baselineskip} % allow 3 more lines on current page
 Im Map-Viewer wird unterdessen wie folgt auf die Bild-Url gewartet:
 \lstset{language=CoffeeScript}
-\begin{lstlisting}[frame=single,xleftmargin=0pt]
+\begin{lstlisting}[frame=single,numbers=none,xleftmargin=0pt]
 promise = drawTile {tile: {column: 13456, row: 546}, zoom: 16}
 promise.then (url) ->
   renderImage url
@@ -2444,10 +2443,10 @@ Für das Vorladen werden in VoyageX 3 verschiedene Strategien implementiert:
 		% bei 100kmg ich vergleiche also den standpunkt mit dem vor 3,6 sekunden
 %		Die Kacheln werden dann entsprechend dem Radius in der richtung vorgeladen.
 		\item Alle 100 Meter wird die Bewegungsrichtung bestimmt.
-		\item Die Kacheln werden 1000 Meter in der Bewegungsrichtung vorgeladen. Dazu wandert der Algorithmus horizontal bis zum Kachelende und dann vertikal bis zur Verbindungsgeraden zwischen Ausgangsort und vorhergesagter Position. Die gesuchten Kacheln sind all jene, deren Kanten$^{\textbf{\ref{CMTPATHALGO1}}}$
+		\item Die Kacheln werden 1000 Meter in der Bewegungsrichtung vorgeladen. Dazu wandert der Algorithmus wiederholt horizontal bis zum Kachelende und dann vertikal bis zur Verbindungsgeraden zwischen Ausgangsort und vorhergesagter Position. Die gesuchten Kacheln sind all jene, deren Kanten$^{\textbf{\ref{CMTPATHALGO1}}}$
 \addtocounter{footnote}{1}%
 \footnotetext{\label{CMTPATHALGO1}1 bei Endkacheln , 2 bei Mittelkacheln} von der Verbindungsgeraden horizontal oder vertikal geschnitten werden, oder nur 1 Kachel falls Ausgangs- und Zielpunkt nah genug beieinander liegen.\\
-Abbildung \ref{fig:PATH_PRED} illustriert die Vorgehensweise: Der blaue Marker zeigt die aktuelle Position. Dir kurze grüne Linie nach links-oben zeigt die 100 Meter zur vorigen Position. Die gelbe Verlängerung der Linie über die aktuelle Position hinaus führt zur 1000 Meter entfernten vorhergesagten Position, welche mit einem "`Beam"'-Marker (\includegraphics[scale=0.4]{bilder/icons/marker-icon-beam.png}) gekennzeichnet ist. Die treppenförmige blaue Linie folgt dem Kachel-Auswahl-Algorithmus.
+Abbildung \ref{fig:PATH_PRED} illustriert die Vorgehensweise: Der blaue Marker zeigt die aktuelle Position. Dir kurze grüne Linie nach links-oben zeigt die 100-Meter-Strecke zur vorigen Position. Die gelbe Verlängerung der Linie über die aktuelle Position hinaus führt zur 1000 Meter entfernten vorhergesagten Position, welche mit einem "`Beam"'-Marker (\includegraphics[scale=0.4]{bilder/icons/marker-icon-beam.png}) gekennzeichnet ist. Die treppenförmige blaue Linie folgt dem Kachel-Auswahl-Algorithmus.
   \begin{figure}[H]
   	\begin{adjustwidth}{-1cm}{1cm}
       \centering
@@ -2496,7 +2495,7 @@ an den Client des Autors zurückgeschickt wird
 \item
 \begin{enumerate}[label=\alph*),leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
 \item Im Client des Autors werden alle Elemente aus der Upload-Queue entfernt und mit der ID vom Backend aktualisiert
-\item Die anderen (online-)Clients holen sich vom Backend das Änderungs-Log.
+\item Die anderen (online-)Clients holen sich ggf. das Änderungs-Log vom Backend, aktualisieren lokale Daten und Ansicht und informieren den lokalen Benutzer.
 \end{enumerate}
 \end{enumerate}
 %Wenn ein Benutzer den "`Sichern"'-Button im PoI-Eingabeformular klickt werden die Daten zunächst lokal %gespeichert.
@@ -2528,7 +2527,7 @@ Die nachfolgende Abbildung zeigt einen alten PoI mit ID 30 sowie einen neuen PoI
 \vspace{1ex}
 %Sobald der Client online ist (ggf. sofort) wird die PoI-Note-Queue zum Backend hochgeladen:
 \subparagraph{Synchronisation mit Backend (\texttt{Push}):}
-Das folgende Sequenz-Diagramm zeigt die an Schritt 2 beteiligten Coffee-Script-Klassen und aufgerufenen Funktionen im Frontend, sowie die an den Schritten 3 und 4 beteiligten Ruby-Klassen im Backend. Der 
+Das folgende Sequenz-Diagramm zeigt die an den Schritten 2 und 4 beteiligten Coffee-Script-Klassen und aufgerufenen Funktionen im Frontend, sowie die an Schritt 3 beteiligten Ruby-Klassen im Backend. 
   \begin{figure}[H]
   	\begin{adjustwidth}{-1.5cm}{1.5cm}
       \centering
@@ -2538,7 +2537,7 @@ Das folgende Sequenz-Diagramm zeigt die an Schritt 2 beteiligten Coffee-Script-K
   \end{figure}
 \noindent
 %Nach dem Push wird die temporäre ID mit der Backend-generierten ID überschrieben und die PoI-Referenz aus der Upload-Queue gelöscht.
-Die nachfolgende Abbildung zeigt das localStorage nachdem der neue PoI mit der ID 31 aktualisiert und die Upload-Warteschlange gelöscht wurde.
+Die nachfolgende Abbildung zeigt das localStorage des Autors nachdem der neue PoI mit der ID 31 aktualisiert und die Upload-Warteschlange gelöscht wurde.
   \begin{figure}[H]
   	\begin{adjustwidth}{-0.8cm}{0.8cm}
       \centering
@@ -2643,12 +2642,13 @@ Eine Follow-Beziehung kann jederzeit von jedem der beiden Interaktions-Partner w
 
 \subsubsection{Kommunikations-Kanäle}
 Die Infrastruktur für die Interaktion wird mit einem \texttt{Publish-Subscribe-Messaging} System realisiert. Dabei werden für die Kommunikation logische Kanäle (Channels) definiert. Für den Empfang von Nachrichten wird ein Channel abonniert (subscribe), zum Versenden werden Nachrichten in einen Channel geschrieben (publish).\\ Für die Umsetzung der Kommunikations-Anforderungen in VoyageX müssen 2 Arten von Verbindungen bereitgestellt werden:
+\newpage
 \begin{itemize}[leftmargin=*,noitemsep,topsep=1ex,parsep=0pt,partopsep=0pt]
 \item \textbf{Broadcast (BC):}
 	\begin{itemize}
 		\item %
 %Jedem Benutzer ist eine BC-Verbindung zugeordnet.
-Nachrichten an mehrere Empfänger werden vom VoyageX-Client in einen von autorisierten Peers abonnierten Broadcast-Kanal des Benutzers geschrieben. Der Kommunikations-Server blockiert in diesem Kanal Nachrichten die von Clients anderer Benutzer gesendet werden.
+Nachrichten an mehrere Empfänger werden vom VoyageX-Client eines Benutzers in einen von autorisierten Peers abonnierten Broadcast-Kanal des Benutzers geschrieben. Der Kommunikations-Server blockiert in diesem Kanal Nachrichten die von Clients anderer Benutzer gesendet werden.
 		\item Das System veröffentlicht Nachrichten die alle Benutzer erhalten sollen, beispielsweise Daten-Aktualisierungs-Benachrichtigungen, in einem allgemeinen System-Kanal.
 	\end{itemize}
 
@@ -2657,7 +2657,7 @@ Nachrichten an mehrere Empfänger werden vom VoyageX-Client in einen von autoris
 		\item %
 Jedem Benutzer ist ein P2P-Kanal zugeordnet, den er als einziger abonniert und in den alle Peers private Nachrichten an den Benutzer schreiben können. Der Kommunikations-Server blockiert Abonnements dieses Kanals durch Clients anderer Benutzer.
 %Für das versenden von Nachrichten an einen einzelnen Empfänger werden diese vom VoyageX-Client des Senders in einen P2P-Kanal des Empfängers geschrieben. Der Empfänger ist der einzige Abonnent eines P2P-Kanals, der Kommunikations-Server blockiert Abonnements von anderen Benutzern. Für den Empfang privater Nachrichten abonniert jeder VoyageX-Client für seinen Benutzer P2P-Kanal.
-		\item Eine Sonderform eines P2P-Kanals ist der benutzergebundene System-Kanal. Für jeden Benutzer wird genau ein Systemkanal definiert, den ausschließlich der Client des Benutzers und der Server abonnieren, und in den nur diese beiden schreiben. Im Gegensatz zu den anderen P2P-Channels ist dieser Kanal auch bidirektional.
+		\item Eine Sonderform eines P2P-Kanals ist der benutzergebundene System-Kanal. Für jeden Benutzer wird genau ein Systemkanal definiert, den ausschließlich der Client des Benutzers und der Server abonnieren, und in den nur diese beiden schreiben. Im Gegensatz zu den anderen P2P-Channels ist dieser Kanal bidirektional.
 	\end{itemize}
 \end{itemize}
 In den folgenden 3 Abbildungen werden Kommunikations-Eigenschaften und Verhalten der verschiedenen Kanal-Typen veranschaulicht. Lesen von Nachrichten wird durch Pfeile vom Kanal zum Benutzer dargestellt, Schreiben mit einem Pfeil vom Benutzer zum Kanal. Die Blitze kennzeichnen nicht erlaubte Aktionen. In den Kanal-Darstellungen sind Verbindungs-Art und Kanal-Identifikation angegeben, wobei sich letztere wie folgt zusammensetzt:\\ \\
@@ -2840,7 +2840,7 @@ zeigt die Darstellung eines durch Positions-Änderungen eines Peers definierten 
 %        alert('This Browser Doesn\'t Support Local Storage so This Message will be lost if you quit the Browser')
 %\end{lstlisting}
 \paragraph{P2P-Chat}
-Um den P2P-Chat-Dialog zu starten klickt ein Benutzer auf das Chat-Icon im Werkzeugmenu des Peer-Markers. 
+Um den P2P-Chat-Dialog zu starten klickt ein Benutzer auf das Chat-Icon im Werkzeug- Menu des Peer-Markers. 
 Im Chat-Fenster wird, sofern vorhanden, die Chat-Historie mit einer konfigurierbaren maximalen Länge (standardmäßig 10) Nachrichten angezeigt.\\ \\
 Der VoyageX-Client des Senders "`published"' eine neue Nachricht im P2P-Chat-Channel des Empfängers (vgl. Abbildung \ref{fig:BCANDP2PCHANNEL}), und letzterer wird, wenn er online ist, mit einem akkustischen Signal und/oder einem Popup-Fenster über den Erhalt der Nachricht informiert.\\
 Nachdem der Empfänger aber im Augenblick des Versendens eventuell nicht online ist, werden alle Nachrichten im Backend gespeichert, um auch eine verzögerte bzw. spätere "`Zustellung"' zu ermöglichen. Der Erhalt einer Nachricht wird aus diesem Grund auch immer vom Client des Empfängers mit einem Ajax-Call bestätigt. Wenn der Benutzer vom offine- in den online-Modus wechselt, lädt sein Client alle noch nicht erhaltenen (bestätigten) Nachrichten vom Backend.\\
@@ -2888,8 +2888,8 @@ Wie beim P2P-Chat werden auch beim Konferenz-Chat alle Nachrichten im Backend ge
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Fazit}
 In dieser Bachelorarbeit wurde mit VoyageX ein Prototyp für die Implementierung von Interaktions- und Synchronisations-Funktionen in einer kooperativen Webanwendung zur Bearbeitung von Points of Interest entwickelt.\\ \\
-Dazu wurde zunächst ein Szenario entwickelt um die gewünschten prototypischen Funktionen und das angestrebte Anwendungsverhalten zu demonstrieren. Aus der anschließenden Analyse konnten die zu lösenden Probleme in einer Matrix mit den Dimensionen Verbindungszustand und Synchronizität klassifiziert werden.\\ \\
-Für die Grundfunktion der Anwendung, nämlich der kooperativen Bearbeitung von PoIs, wurde als Kontext-gebender Anwendungsbereich die Domäne der Location Based Social Networks identifiziert und analysiert. Dazu wurden neben der historischen Entwicklung und Anwendungsbereichs-spezifischer Grundlagen auch die Funktionen weiterer Anwendungen betrachtet und miteinander verglichen.
+Dazu wurde zunächst ein Szenario entwickelt, in dem die gewünschten prototypischen Funktionen und das angestrebte Anwendungsverhalten demonstriert wurden. Aus der anschließenden Analyse konnten die zu lösenden Probleme in einer Matrix mit den Dimensionen Verbindungszustand und Synchronizität klassifiziert werden.\\ \\
+Für die Grundfunktion der Anwendung, nämlich der kooperativen Bearbeitung von PoIs, wurde als Kontext-gebender Anwendungsbereich die Domäne der Location Based Social Networks identifiziert und analysiert. Dazu wurden neben der historischen Entwicklung und Anwendungsbereichs-spezifischer Grundlagen auch die Funktionen weiterer Anwendungen aus der Domäne betrachtet und miteinander verglichen.
 %, und daraus Anforderungen und Funktionen abgeleitet, und aus existierende Anwendungen übernommen.
 Es konnte festgestellt werden, daß die hier entwickelten prototypischen Funktionen insgesamt bei den untersuchten Produkten noch wenig bzw. eingeschränkt verbreitet sind.\\ \\
 %Es gibt zwar beispeilsweise teilweise die Möglichkeit Kartenausschnitte zu speichern, allerdings muß dies explizit vom Benutzer 
